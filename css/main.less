@@ -1201,15 +1201,31 @@ body{
 
 #main-booking #booking .main-form .sb,
 #pop-up .sb {
+  display: grid;
+  grid-template-columns: 58% 38%;
+  justify-content: space-between;
   li:first-child {
-    width: 58%;
+    float: none;
+    width: 100%;
   }
   li:last-child {
-    width: 38%;
+    float: none;
+    width: 100%;
+  }
+  > li > span.error {
+    min-height: 32px;
+    line-height: 16px;
   }
   .jq-selectbox__dropdown li {
     float: none!important;
     width: 100%!important;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  #main-booking #booking .main-form .sb,
+  #pop-up .sb {
+    grid-template-columns: 1fr;
   }
 }
 

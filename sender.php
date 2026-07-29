@@ -91,7 +91,7 @@ if (
     !preg_match('/^\+?[0-9\s()\-]{7,20}$/', $phone) ||
     !$dateIsValid ||
     $dateObject < $today ||
-    !preg_match('/^(09|1[0-9]):00$/', $time)
+    !preg_match('/^(09|1[0-8]):00$/', $time)
 ) {
     booking_response(
         'Проверьте обязательные поля и попробуйте снова.',

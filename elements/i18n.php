@@ -74,6 +74,18 @@ function site_translation_map($language)
     return array_merge($generated, $curated);
 }
 
+function site_translate($source)
+{
+    $language = site_language();
+    if ($language === 'ru') {
+        return $source;
+    }
+
+    $translations = site_translation_map($language);
+    $key = site_normalize_translation_key($source);
+    return isset($translations[$key]) ? $translations[$key] : $source;
+}
+
 function site_localize_html($html)
 {
     $language = site_language();

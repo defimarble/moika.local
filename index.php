@@ -218,10 +218,18 @@
                             var $bookingForm = $("#booking-form");
                             var $bookingStatus = $("#booking-status");
                             var $submitButton = $bookingForm.find('button[type="submit"]');
+                            var bookingValidationMessages = <?php echo json_encode(array(
+                                'service' => site_translate('Выберите услугу'),
+                                'name' => site_translate('Введите имя'),
+                                'date' => site_translate('Введите дату'),
+                                'time' => site_translate('Введите время'),
+                                'phone' => site_translate('Введите телефон'),
+                                'phoneInvalid' => site_translate('Введите корректный телефон')
+                            ), JSON_UNESCAPED_SLASHES); ?>;
 
                             $.validator.addMethod("internationalPhone", function(value, element) {
                                 return this.optional(element) || /^\+?[0-9\s()\-]{7,20}$/.test(value);
-                            }, "Введите корректный телефон");
+                            }, bookingValidationMessages.phoneInvalid);
 
                             $("#datepicker").datepicker("option", {
                                 minDate: 0,
@@ -230,6 +238,7 @@
 
                             $bookingForm.validate({
                                 rules: {
+                                    usl: "required",
                                     name: "required",
                                     date: "required",
                                     time: "required",
@@ -239,16 +248,25 @@
                                     }
                                 },
                                 messages: {
-                                    name: "Введите имя",
-                                    date: "Введите дату",
-                                    time: "Введите время",
+                                    usl: bookingValidationMessages.service,
+                                    name: bookingValidationMessages.name,
+                                    date: bookingValidationMessages.date,
+                                    time: bookingValidationMessages.time,
                                     tel: {
-                                        required: "Введите телефон",
-                                        internationalPhone: "Введите корректный телефон"
+                                        required: bookingValidationMessages.phone,
+                                        internationalPhone: bookingValidationMessages.phoneInvalid
                                     }
                                 },
                                 ignore: "div:hidden input, div:hidden select",
                                 errorElement: "span",
+                                errorPlacement: function(error, element) {
+                                    var $styledSelect = element.closest(".jq-selectbox");
+                                    if (element.is("select") && $styledSelect.length) {
+                                        error.insertAfter($styledSelect);
+                                        return;
+                                    }
+                                    error.insertAfter(element);
+                                },
                                 submitHandler : function(form){
                                     var formData = new FormData(form);
                                     $bookingStatus.removeClass("ok error").text("");
@@ -326,7 +344,6 @@
                                             <option value="16:00">16:00</option>
                                             <option value="17:00">17:00</option>
                                             <option value="18:00">18:00</option>
-                                            <option value="19:00">19:00</option>
                                         </select>
                                     </li>
                                 </ul>
