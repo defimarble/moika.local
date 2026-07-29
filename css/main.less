@@ -854,6 +854,13 @@ body{
       background-position: left center,right center;
       background-repeat: no-repeat;
       margin-bottom: 20px;
+      span{
+        display: inline-block;
+        max-width: 85%;
+        padding: 0 25px;
+        background-color: #fff;
+        font-family: inherit;
+      }
     }
     .price-block{
       float: left;
@@ -942,6 +949,12 @@ body{
           float: left;
           width: 100%;
           margin-bottom: 20px;
+          img{
+            display: block;
+            width: 100%;
+            max-width: 470px;
+            height: auto;
+          }
         }
         .bottom-block{
           float: left;
@@ -977,11 +990,35 @@ body{
       .right{
         float: right;
         width: 470px;
+        h3{
+          margin: 18px 0 8px;
+          color: @blue;
+          font-size: 18px;
+        }
+        ul, ol{
+          margin-bottom: 12px;
+        }
+        li{
+          margin-bottom: 7px;
+        }
         p{
           font-size: 14px;
           color: #3d3d3d;
           margin-bottom: 10px;
         }
+      }
+    }
+    .service-conclusion{
+      clear: both;
+      padding-top: 10px;
+      h3{
+        margin: 0 0 10px;
+        color: @blue;
+        font-size: 22px;
+      }
+      p{
+        margin-bottom: 10px;
+        font-size: 14px;
       }
     }
   }

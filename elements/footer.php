@@ -41,7 +41,7 @@
                 </li>
             </ul>
             <div class="copyright">
-                © 2016-2024 Kasipesu
+                © 2016-2026 Käsipesu
             </div>
         </div>
     </div>

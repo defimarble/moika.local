@@ -94,25 +94,25 @@
                             <a href="polirovka_kuzova.php" class="scroll">Полировка кузова</a>
                         </li>
                         <li>
-                            <a href="under_construction_stub.php" class="scroll">Полировка и восстановление фар</a>
+                            <a href="polirovka_far.php" class="scroll">Полировка и восстановление фар</a>
                         </li>
                         <li>
-                            <a href="under_construction_stub.php" class="scroll">Химчистка салона</a>
+                            <a href="himchistka_salona.php" class="scroll">Химчистка салона</a>
                         </li>
                         <li>
-                            <a href="under_construction_stub.php" class="scroll">Химчистка двигателя</a>
+                            <a href="himchistka_dvigatelya.php" class="scroll">Химчистка двигателя</a>
                         </li>
                         <li>
-                            <a href="under_construction_stub.php" class="scroll">Полная очистка автомобиля</a>
+                            <a href="polnaya_ochistka_avtomobilya.php" class="scroll">Полная очистка автомобиля</a>
                         </li>
                         <li>
-                            <a href="under_construction_stub.php" class="scroll">Покрытие воском</a>
+                            <a href="pokrytie_voskom.php" class="scroll">Покрытие воском</a>
                         </li>
                         <li>
-                            <a href="under_construction_stub.php" class="scroll">Покрытие керамикой</a>
+                            <a href="pokrytie_keramikoy.php" class="scroll">Покрытие керамикой</a>
                         </li>
                         <li>
-                            <a href="under_construction_stub.php" class="scroll">Покрытие защитной пленкой</a>
+                            <a href="zashchitnaya_plenka.php" class="scroll">Покрытие защитной пленкой</a>
                         </li>
 
                     </ul>
