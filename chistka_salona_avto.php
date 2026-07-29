@@ -19,7 +19,7 @@
                 </div>
                 <div class="left">
                     <div class="img">
-                        <img src="image/chistka_salona_avto.jpg" alt="Чистка салона автомобиля">
+                        <img loading="lazy" decoding="async" src="image/chistka_salona_avto.webp" alt="Чистка салона автомобиля">
                     </div>
                     <div class="bottom-block">
                         <div class="price">
@@ -60,7 +60,7 @@
                 </div>
                 <div class="left">
                     <div class="img">
-                        <img src="image/uhod_za_kozhanym_salonom_avto.jpg" alt="Уход за кожаным салоном автомобиля">
+                        <img loading="lazy" decoding="async" src="image/uhod_za_kozhanym_salonom_avto.webp" alt="Уход за кожаным салоном автомобиля">
                     </div>
                 </div>
                 <div class="right">
@@ -84,7 +84,7 @@
                 </div>
                 <div class="left">
                     <div class="img">
-                        <img src="image/himchistka_avtosalona.jpg" alt="Химчистка салона автомобиля">
+                        <img loading="lazy" decoding="async" src="image/himchistka_avtosalona.webp" alt="Химчистка салона автомобиля">
                     </div>
                     
                 </div>
@@ -122,7 +122,7 @@
                 </div>
                 <div class="left">
                     <div class="img">
-                        <img src="image/himija_dlia_chistki_salona_avto_470.jpg" alt="Профессиональная химия для чистки салона">
+                        <img loading="lazy" decoding="async" src="image/himija_dlia_chistki_salona_avto_470.webp" alt="Профессиональная химия для чистки салона">
                     </div>
                     
                 </div>

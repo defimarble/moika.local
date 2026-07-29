@@ -29,13 +29,15 @@ include_once('elements/top-page.php');
             'content' => $service['content']
         ]];
         foreach ($sections as $index => $section):
+        $imageSize = @getimagesize($section['image']);
         ?>
         <div class="usl-list service-section">
             <div class="line"></div>
             <div class="title"><?php echo htmlspecialchars($section['title'], ENT_QUOTES, 'UTF-8'); ?></div>
             <div class="left">
                 <div class="img">
-                    <img src="<?php echo htmlspecialchars($section['image'], ENT_QUOTES, 'UTF-8'); ?>"
+                    <img loading="lazy" decoding="async" src="<?php echo htmlspecialchars($section['image'], ENT_QUOTES, 'UTF-8'); ?>"
+                         <?php if ($imageSize): ?>width="<?php echo $imageSize[0]; ?>" height="<?php echo $imageSize[1]; ?>"<?php endif; ?>
                          alt="<?php echo htmlspecialchars($section['image_alt'], ENT_QUOTES, 'UTF-8'); ?>">
                 </div>
                 <?php if ($index === count($sections) - 1): ?>

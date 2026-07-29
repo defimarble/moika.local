@@ -18,7 +18,7 @@
                 </div>
                 <div class="left">
                     <div class="img">
-                        <img src="image/naruzhnaja_moika_avto.jpg" alt="Наружная мойка автомобиля">
+                        <img loading="lazy" decoding="async" src="image/naruzhnaja_moika_avto.webp" alt="Наружная мойка автомобиля">
                     </div>
                     <div class="bottom-block">
                         <div class="price">
@@ -53,7 +53,7 @@
                 </div>
                 <div class="left">
                     <div class="img">
-                        <img src="image/himija_avtomoiki.jpg" alt="Профессиональная автохимия">
+                        <img loading="lazy" decoding="async" src="image/himija_avtomoiki.webp" alt="Профессиональная автохимия">
                     </div>
                 </div>
                 <div class="right">
@@ -198,7 +198,7 @@
                 </div>
                 <div class="left">
                     <div class="img">
-                        <img src="image/uslthree.jpg" alt="Профессиональная мойка автомобиля">
+                        <img loading="lazy" decoding="async" src="image/uslthree.webp" alt="Профессиональная мойка автомобиля">
                     </div>
                     <div class="bottom-block">
                         <div class="price">

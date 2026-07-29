@@ -129,17 +129,17 @@
             <ul class="social">
                 <li>
                     <a href="#" target="_blank">
-                        <img src="image/vk.png" alt="">
+                        <img loading="lazy" decoding="async" src="image/vk.png" alt="">
                     </a>
                 </li>
                 <li>
                     <a href="#" target="_blank">
-                        <img src="image/fc.png" alt="">
+                        <img loading="lazy" decoding="async" src="image/fc.png" alt="">
                     </a>
                 </li>
                 <li>
                     <a href="#" target="_blank">
-                        <img src="image/inst.png" alt="">
+                        <img loading="lazy" decoding="async" src="image/inst.png" alt="">
                     </a>
                 </li>
             </ul>

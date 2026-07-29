@@ -5,7 +5,7 @@
     <div id="main-header">
         <div id="header">
             <a href="/" class="logo">
-                <img src="image/logo.png" alt="Pirita Pesula">
+                <img src="image/logo.png" width="220" height="65" alt="Pirita Pesula">
             </a>
             <div class="right-block">
                 <ul class="lang">

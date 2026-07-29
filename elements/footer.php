@@ -4,17 +4,17 @@
             <ul class="social">
                 <li>
                     <a href="https://vk.com/piritapesula" target="_blank" rel="noopener noreferrer">
-                        <img src="image/vk.png" alt="Pirita Pesula во ВКонтакте">
+                        <img loading="lazy" decoding="async" src="image/vk.png" alt="Pirita Pesula во ВКонтакте">
                     </a>
                 </li>
                 <li>
                     <a href="https://www.facebook.com/piritapesula/" target="_blank" rel="noopener noreferrer">
-                        <img src="image/fc.png" alt="Pirita Pesula в Facebook">
+                        <img loading="lazy" decoding="async" src="image/fc.png" alt="Pirita Pesula в Facebook">
                     </a>
                 </li>
                 <li>
                     <a href="https://www.instagram.com/piritapesula/" target="_blank" rel="noopener noreferrer">
-                        <img src="image/inst.png" alt="Pirita Pesula в Instagram">
+                        <img loading="lazy" decoding="async" src="image/inst.png" alt="Pirita Pesula в Instagram">
                     </a>
                 </li>
             </ul>

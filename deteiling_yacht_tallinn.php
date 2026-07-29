@@ -37,7 +37,7 @@
                 </div>
                 <div class="left">
                     <div class="img">
-                        <img src="image/Yacht_detailing_tallinn_head_image.jpg" alt="Детейлинг яхты в Таллинне">
+                        <img loading="lazy" decoding="async" src="image/Yacht_detailing_tallinn_head_image.webp" alt="Детейлинг яхты в Таллинне">
                     </div>
 
                 </div>
@@ -93,7 +93,7 @@
                 </div>
                 <div class="left">
                     <div class="img">
-                        <img src="image/Yacht_detailing_tallinn_process_image.jpg" alt="фото нанесение защитных покрытий на гелькоут яхты">
+                        <img loading="lazy" decoding="async" src="image/Yacht_detailing_tallinn_process_image.webp" alt="фото нанесение защитных покрытий на гелькоут яхты">
                     </div>
                     <div class="bottom-block">
                         <div class="price">
@@ -116,7 +116,7 @@
                 </div>
                 <div class="left">
                     <div class="img">
-                        <img src="image/Yacht_board_detailing.jpg" alt="Детейлинг борта яхты">
+                        <img loading="lazy" decoding="async" src="image/Yacht_board_detailing.webp" alt="Детейлинг борта яхты">
                     </div>
                     <div class="bottom-block">
                         <div class="price">
@@ -200,7 +200,7 @@
                 </div>
                 <div class="left">
                     <div class="img">
-                        <img src="image/Yacht_plenka_detailing.jpg" alt="Защитная плёнка для яхты">
+                        <img loading="lazy" decoding="async" src="image/Yacht_plenka_detailing.webp" alt="Защитная плёнка для яхты">
                     </div>
                     <div class="bottom-block">
                         <div class="price">

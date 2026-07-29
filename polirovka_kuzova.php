@@ -32,7 +32,7 @@
                 </div>
                 <div class="left">
                     <div class="img">
-                        <img src="image/Polirovka_kuzova.jpg" alt="Полировка кузова автомобиля">
+                        <img loading="lazy" decoding="async" src="image/Polirovka_kuzova.webp" alt="Полировка кузова автомобиля">
                     </div>
                     <div class="bottom-block">
                         <div class="price">
@@ -113,7 +113,7 @@
                 </div>
                 <div class="left">
                     <div class="img">
-                        <img src="image/Polirovka_kraski_avtomobila.jpg" alt="Полировка лакокрасочного покрытия автомобиля">
+                        <img loading="lazy" decoding="async" src="image/Polirovka_kraski_avtomobila.webp" alt="Полировка лакокрасочного покрытия автомобиля">
                     </div>
                 </div>
                 <div class="right">
@@ -153,7 +153,7 @@
                 </div>
                 <div class="left">
                     <div class="img">
-                        <img src="image/Polirovka_professionalnaja_tallinn.jpg" alt="Профессиональная полировка автомобиля в Таллинне">
+                        <img loading="lazy" decoding="async" src="image/Polirovka_professionalnaja_tallinn.webp" alt="Профессиональная полировка автомобиля в Таллинне">
                     </div>
                 </div>
                 <div class="right">

@@ -25,74 +25,74 @@
                 <ul class="gallery-list">
                     <li>
                         <a class="fancybox" data-fancybox-group="gallery" href="gallery/g1.jpg" >
-						<img alt="Фото профессиональной наружной мойки автомобиля в Таллинне" src="gallery/g1.jpg" /></a>
+						<img loading="lazy" decoding="async" alt="Фото профессиональной наружной мойки автомобиля в Таллинне" src="gallery/g1.webp" /></a>
                     </li>
                    <li>
                         <a class="fancybox" data-fancybox-group="gallery" href="gallery/g2.jpg" >
-						<img alt="Фото качественной наружной ручной автомойки в Таллинне" src="gallery/g2.jpg" /></a>
+						<img loading="lazy" decoding="async" alt="Фото качественной наружной ручной автомойки в Таллинне" src="gallery/g2.webp" /></a>
                     </li>
                     <li>
                         <a class="fancybox" data-fancybox-group="gallery" href="gallery/g3.jpg" >
-						<img alt="Фото профессиональной наружной мойки автомобиля с лучшей автохимией в Таллине" src="gallery/g3.jpg" /></a>
+						<img loading="lazy" decoding="async" alt="Фото профессиональной наружной мойки автомобиля с лучшей автохимией в Таллине" src="gallery/g3.webp" /></a>
                     </li>
                     <li>
                         <a class="fancybox" data-fancybox-group="gallery" href="gallery/g4.jpg" >
-						<img alt="Фото профессиональной чистки салона автомобиля в Таллинне" src="gallery/g4.jpg" /></a>
+						<img loading="lazy" decoding="async" alt="Фото профессиональной чистки салона автомобиля в Таллинне" src="gallery/g4.webp" /></a>
                     </li>
                     <li>
                         <a class="fancybox" data-fancybox-group="gallery" href="gallery/g5.jpg" >
-						<img alt="Фото профессиональной химчистки салона автомобиля в Таллинне" src="gallery/g5.jpg" /></a>
+						<img loading="lazy" decoding="async" alt="Фото профессиональной химчистки салона автомобиля в Таллинне" src="gallery/g5.webp" /></a>
                     </li>
                     <li>
                         <a class="fancybox" data-fancybox-group="gallery" href="gallery/g55.jpg" >
-						<img alt="Фото химчистки текстильных сидений автомобиля в Талллинне" src="gallery/g55.jpg" /></a>
+						<img loading="lazy" decoding="async" alt="Фото химчистки текстильных сидений автомобиля в Талллинне" src="gallery/g55.webp" /></a>
                     </li>
                     <li>
                         <a class="fancybox" data-fancybox-group="gallery" href="gallery/g6.jpg" >
-						<img alt="Фото автомобиля в Таллинне после услуги детейлинга на нашей автомойке Pirita Pesula с последующей полировкой и нанесением воска на лакокрасочное покрытие" src="gallery/g6.jpg" /></a>
+						<img loading="lazy" decoding="async" alt="Фото автомобиля в Таллинне после услуги детейлинга на нашей автомойке Pirita Pesula с последующей полировкой и нанесением воска на лакокрасочное покрытие" src="gallery/g6.webp" /></a>
                     </li>
                     <li>
                         <a class="fancybox" data-fancybox-group="gallery" href="gallery/g8.jpg" >
-						<img alt="Изображение состояния поверхности автомашины после уcлуги детейлинга с полировкой и нанесением керамики на нашей ручной мойке машин Pirita Pesula в Таллинне
-" src="gallery/g8.jpg" /></a>
+						<img loading="lazy" decoding="async" alt="Изображение состояния поверхности автомашины после уcлуги детейлинга с полировкой и нанесением керамики на нашей ручной мойке машин Pirita Pesula в Таллинне
+" src="gallery/g8.webp" /></a>
                     </li>
                     <li>
                         <a class="fancybox" data-fancybox-group="gallery" href="gallery/g9.jpg" >
-						<img alt="Великолепный внешний вид автомобиля после процедуры детейлинга с полировкой ЛКП и нанесением воска на нашей автомойке Pirita Pesula в Таллинне
-" src="gallery/g9.jpg" /></a>
+						<img loading="lazy" decoding="async" alt="Великолепный внешний вид автомобиля после процедуры детейлинга с полировкой ЛКП и нанесением воска на нашей автомойке Pirita Pesula в Таллинне
+" src="gallery/g9.webp" /></a>
                     </li>
                     <li>
-                        <a class="fancybox" data-fancybox-group="gallery" href="gallery/g91.jpg" ><img alt="Фото работ Pirita Pesula" src="gallery/g91.jpg" /></a>
+                        <a class="fancybox" data-fancybox-group="gallery" href="gallery/g91.jpg" ><img loading="lazy" decoding="async" alt="Фото работ Pirita Pesula" src="gallery/g91.webp" /></a>
                     </li>
                     <li>
-                        <a class="fancybox" data-fancybox-group="gallery" href="gallery/g92.jpg" ><img alt="Фото работ Pirita Pesula" src="gallery/g92.jpg" /></a>
+                        <a class="fancybox" data-fancybox-group="gallery" href="gallery/g92.jpg" ><img loading="lazy" decoding="async" alt="Фото работ Pirita Pesula" src="gallery/g92.webp" /></a>
                     </li>
                     <li>
-                        <a class="fancybox" data-fancybox-group="gallery" href="gallery/g93.jpg" ><img alt="Фото работ Pirita Pesula" src="gallery/g93.jpg" /></a>
+                        <a class="fancybox" data-fancybox-group="gallery" href="gallery/g93.jpg" ><img loading="lazy" decoding="async" alt="Фото работ Pirita Pesula" src="gallery/g93.webp" /></a>
                     </li>
                     <li>
-                        <a class="fancybox" data-fancybox-group="gallery" href="gallery/g94.jpg" ><img alt="Фото работ Pirita Pesula" src="gallery/g94.jpg" /></a>
+                        <a class="fancybox" data-fancybox-group="gallery" href="gallery/g94.jpg" ><img loading="lazy" decoding="async" alt="Фото работ Pirita Pesula" src="gallery/g94.webp" /></a>
                     </li>
                     <li>
-                        <a class="fancybox" data-fancybox-group="gallery" href="gallery/g7.jpg" ><img alt="Фото работ Pirita Pesula" src="gallery/g7.jpg" /></a>
+                        <a class="fancybox" data-fancybox-group="gallery" href="gallery/g7.jpg" ><img loading="lazy" decoding="async" alt="Фото работ Pirita Pesula" src="gallery/g7.webp" /></a>
                     </li>					
                     <li>
-                        <a class="fancybox" data-fancybox-group="gallery" href="gallery/g95.jpg" ><img alt="Фото работ Pirita Pesula" src="gallery/g95.jpg" /></a>
+                        <a class="fancybox" data-fancybox-group="gallery" href="gallery/g95.jpg" ><img loading="lazy" decoding="async" alt="Фото работ Pirita Pesula" src="gallery/g95.webp" /></a>
                     </li>
                     <li>
-                        <a class="fancybox" data-fancybox-group="gallery" href="gallery/g96.jpg" ><img alt="Фото работ Pirita Pesula" src="gallery/g96.jpg" /></a>
+                        <a class="fancybox" data-fancybox-group="gallery" href="gallery/g96.jpg" ><img loading="lazy" decoding="async" alt="Фото работ Pirita Pesula" src="gallery/g96.webp" /></a>
                     </li>
                     <li>
-                        <a class="fancybox" data-fancybox-group="gallery" href="gallery/g97.jpg" ><img alt="Фото работ Pirita Pesula" src="gallery/g97.jpg" /></a>
+                        <a class="fancybox" data-fancybox-group="gallery" href="gallery/g97.jpg" ><img loading="lazy" decoding="async" alt="Фото работ Pirita Pesula" src="gallery/g97.webp" /></a>
                     </li>
                     <li>
-                        <a class="fancybox" data-fancybox-group="gallery" href="gallery/98.jpg" ><img alt="Фото работ Pirita Pesula" src="gallery/g98.jpg" /></a>
+                        <a class="fancybox" data-fancybox-group="gallery" href="gallery/98.jpg" ><img loading="lazy" decoding="async" alt="Фото работ Pirita Pesula" src="gallery/g98.webp" /></a>
                     </li>
                     <li>
-                        <a class="fancybox" data-fancybox-group="gallery" href="gallery/g99.jpg" ><img alt="Фото работ Pirita Pesula" src="gallery/g99.jpg" /></a>
+                        <a class="fancybox" data-fancybox-group="gallery" href="gallery/g99.jpg" ><img loading="lazy" decoding="async" alt="Фото работ Pirita Pesula" src="gallery/g99.webp" /></a>
                     </li>
                     <li>
-                        <a class="fancybox" data-fancybox-group="gallery" href="gallery/g991.jpg" ><img alt="Фото работ Pirita Pesula" src="gallery/g991.jpg" /></a>
+                        <a class="fancybox" data-fancybox-group="gallery" href="gallery/g991.jpg" ><img loading="lazy" decoding="async" alt="Фото работ Pirita Pesula" src="gallery/g991.webp" /></a>
                     </li>
                      
                 </ul>

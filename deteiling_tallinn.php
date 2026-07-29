@@ -24,7 +24,7 @@
                 </div>
                 <div class="left">
                     <div class="img">
-                        <img src="image/detiling_head_image_470.jpg" alt="Детейлинг автомобиля в Таллинне">
+                        <img loading="lazy" decoding="async" src="image/detiling_head_image_470.webp" alt="Детейлинг автомобиля в Таллинне">
                     </div>
                     <div class="bottom-block">
                         <div class="price">

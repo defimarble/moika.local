@@ -29,7 +29,7 @@
                 </div>
                 <div class="left">
                     <div class="img">
-                        <img src="image/Corporate 3.jpg" alt="фото корпоративные услуги мойки">
+                        <img loading="lazy" decoding="async" src="image/Corporate 3.webp" alt="фото корпоративные услуги мойки">
 					</div>
                 </div>
                 <div class="right">
@@ -93,7 +93,7 @@
 
 				<div class="left">
                     <div class="img">
-                        <img src="image/Corporate 1.jpg" alt="фото корпоративные услуги мойки">
+                        <img loading="lazy" decoding="async" src="image/Corporate 1.webp" alt="фото корпоративные услуги мойки">
 					</div>
 				</div>
 
@@ -105,7 +105,7 @@
                 </div>
                 <div class="left">
                     <div class="img">
-                        <img src="image/Corporate 2.jpg" alt="фото корпоративные услуги мойки в Таллине">
+                        <img loading="lazy" decoding="async" src="image/Corporate 2.webp" alt="фото корпоративные услуги мойки в Таллине">
 					</div>
 				</div>
 				<div class="right">
