@@ -9,7 +9,7 @@ booking_start_session();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="image/favicon.ico"/>
-    <link href="css/main.css" type="text/css" rel="stylesheet">
+    <link href="css/main.css?v=<?php echo (int) @filemtime(__DIR__ . '/../css/main.css'); ?>" type="text/css" rel="stylesheet">
     <script type='text/javascript' src='js/jquery-2.1.3.js'></script>
     <script type='text/javascript' src='js/jquery-ui-1.9.2.custom.min.js'></script>
     <script type='text/javascript' src='js/jquery.bxslider.min.js'></script>

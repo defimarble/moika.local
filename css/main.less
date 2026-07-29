@@ -2536,3 +2536,92 @@ html[lang="et"] {
     }
   }
 }
+
+// Compact and touch-friendly mobile header.
+@media screen and (max-width: 599px) {
+  #top-line #main-header {
+    padding: 4px 0;
+  }
+  #top-line #main-header #header {
+    display: flex;
+    align-items: center;
+    min-height: 52px;
+    padding: 0 8px;
+  }
+  #top-line #main-header #header .logo {
+    float: none;
+    display: block;
+    flex: 0 0 100px;
+    width: 100px;
+    height: auto;
+  }
+  #top-line #main-header #header .logo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: none;
+    object-fit: contain;
+  }
+  #top-line #main-header #header .right-block {
+    float: none;
+    display: flex;
+    flex: 1 1 auto;
+    align-items: center;
+    min-width: 0;
+    width: 100%;
+    margin: 0;
+  }
+  #top-line #main-header #header .right-block .lang {
+    float: none;
+    display: flex;
+    flex: 1 1 auto;
+    justify-content: center;
+    align-items: center;
+    min-width: 0;
+    margin: 0;
+  }
+  #top-line #main-header #header .right-block .lang li {
+    float: none;
+    margin-right: 7px;
+  }
+  #top-line #main-header #header .right-block .lang li a {
+    line-height: 42px;
+  }
+  #top-line #main-header #header .right-block .mobile-menu {
+    float: none;
+    display: flex !important;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: 16px;
+    margin: 0;
+  }
+  #top-line #main-header #header .right-block .mobile-menu li,
+  #top-line #main-header #header .right-block .mobile-menu li:first-child,
+  #top-line #main-header #header .right-block .mobile-menu li:last-child {
+    float: none;
+    width: 42px;
+    height: 42px;
+    margin: 0;
+    background-size: 34px 34px;
+  }
+  #top-line #main-header #header .right-block .mobile-menu li:first-child {
+    background-image: url("../image/white-menu-icon.png");
+  }
+  #top-line #main-header #header .right-block .mobile-menu li:last-child {
+    position: relative;
+    background-image: url("../image/phone-white-mobile-bt.png");
+  }
+  #top-line #main-header #header .right-block .mobile-menu li:last-child:before {
+    content: "";
+    position: absolute;
+    top: 7px;
+    bottom: 7px;
+    left: -9px;
+    width: 1px;
+    background: #d7e1ec;
+  }
+  #top-line #main-header #header .right-block .mobile-menu li a {
+    width: 100%;
+    height: 100%;
+  }
+}

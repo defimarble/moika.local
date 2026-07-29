@@ -130,11 +130,11 @@ $localBusinessSchema = [
                     </li>
                 </ul>
                 <ul class="mobile-menu">
-                    <li class="mobile-menu-bt">
+                    <li class="mobile-menu-bt" role="button" tabindex="0" aria-label="Открыть меню">
                         &nbsp;
                     </li>
                     <li>
-                        <a href="tel:+37253918434">
+                        <a href="tel:+37253918434" aria-label="Позвонить">
                             &nbsp;
                         </a>
                     </li>
