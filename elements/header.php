@@ -1,3 +1,91 @@
+<?php
+$seoPages = [
+    'index.php' => [
+        'title' => 'Автомойка Pirita Pesula',
+        'description' => 'Профессиональная ручная автомойка и детейлинг автомобилей в Таллинне: наружная мойка, химчистка салона, полировка и защитные покрытия.'
+    ],
+    'price.php' => [
+        'title' => 'Цены на услуги автомойки - Pirita Pesula',
+        'description' => 'Полный прайс-лист Pirita Pesula на ручную мойку, химчистку салона, полировку, керамику, воск и другие услуги детейлинга в Таллинне.'
+    ],
+    'gallery.php' => [
+        'title' => 'Фотогалерея автомойки - Pirita Pesula',
+        'description' => 'Фотографии работ Pirita Pesula: ручная мойка, химчистка салона, полировка кузова и профессиональный детейлинг автомобилей в Таллинне.'
+    ],
+    'moika_avto_snaruzhi.php' => [
+        'title' => 'Наружная мойка автомобиля - Pirita Pesula',
+        'description' => 'Профессиональная наружная ручная мойка автомобиля в Таллинне с безопасной автохимией, очисткой кузова, дисков, арок и стёкол.'
+    ],
+    'chistka_salona_avto.php' => [
+        'title' => 'Чистка салона автомобиля - Pirita Pesula',
+        'description' => 'Профессиональная чистка салона автомобиля в Таллинне: пылесос, очистка пластика, стёкол, текстиля и уход за кожаными поверхностями.'
+    ],
+    'deteiling_tallinn.php' => [
+        'title' => 'Детейлинг в Таллинне - Pirita Pesula',
+        'description' => 'Профессиональный детейлинг автомобилей в Таллинне: полировка, химчистка, керамика, воск и защитная полиуретановая плёнка.'
+    ],
+    'polirovka_kuzova.php' => [
+        'title' => 'Полировка кузова автомобиля - Pirita Pesula',
+        'description' => 'Профессиональная полировка кузова автомобиля в Таллинне: удаление мелких дефектов, восстановление блеска и подготовка к защитному покрытию.'
+    ],
+    'deteiling_yacht_tallinn.php' => [
+        'title' => 'Детейлинг яхт в Таллинне - Pirita Pesula',
+        'description' => 'Профессиональный детейлинг и обслуживание яхт в Таллинне: мойка, полировка, защита корпуса, палубы и металлических элементов.'
+    ],
+    'avtomoika_korporativnym_klientam_tallinn.php' => [
+        'title' => 'Автомойка для корпоративных клиентов - Pirita Pesula',
+        'description' => 'Корпоративное обслуживание автопарков в Таллинне: ручная мойка, чистка салона и детейлинг автомобилей с оплатой по счёту.'
+    ],
+    'usl.php' => [
+        'title' => 'Услуги автомойки - Pirita Pesula',
+        'description' => 'Услуги ручной автомойки Pirita Pesula в Таллинне: наружная мойка, чистка салона и комплексный уход за автомобилем.'
+    ]
+];
+$currentPage = basename(parse_url($_SERVER['REQUEST_URI'] ?? '/index.php', PHP_URL_PATH));
+if ($currentPage === '') {
+    $currentPage = 'index.php';
+}
+$seoTitle = $seoTitle ?? ($seoPages[$currentPage]['title'] ?? 'Pirita Pesula — автомойка и детейлинг в Таллинне');
+$seoDescription = $seoDescription ?? ($seoPages[$currentPage]['description'] ?? 'Профессиональная ручная мойка автомобилей и детейлинг в Таллинне.');
+$seoImage = $seoImage ?? 'image/logo.png';
+$host = preg_replace('/[^a-z0-9.:-]/i', '', $_SERVER['HTTP_HOST'] ?? 'moika.local');
+$isHttps = !empty($_SERVER['HTTPS']) && strtolower((string) $_SERVER['HTTPS']) !== 'off';
+$scheme = $isHttps ? 'https' : 'http';
+$requestPath = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH);
+$canonicalUrl = $scheme . '://' . $host . ($requestPath ?: '/');
+$absoluteImage = $scheme . '://' . $host . '/' . ltrim($seoImage, '/');
+$localBusinessSchema = [
+    '@context' => 'https://schema.org',
+    '@type' => ['AutoWash', 'LocalBusiness'],
+    'name' => 'Pirita Pesula',
+    'url' => $scheme . '://' . $host . '/',
+    'image' => $absoluteImage,
+    'telephone' => '+37253918434',
+    'email' => 'piritapesula@gmail.com',
+    'address' => [
+        '@type' => 'PostalAddress',
+        'streetAddress' => 'Kalamehe tee 1a',
+        'addressLocality' => 'Tallinn',
+        'addressCountry' => 'EE'
+    ],
+    'openingHours' => 'Mo-Sa 09:00-20:00',
+    'sameAs' => [
+        'https://vk.com/piritapesula',
+        'https://www.facebook.com/piritapesula/',
+        'https://www.instagram.com/piritapesula/'
+    ]
+];
+?>
+    <link rel="canonical" href="<?php echo htmlspecialchars($canonicalUrl, ENT_QUOTES, 'UTF-8'); ?>">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:site_name" content="Pirita Pesula">
+    <meta property="og:title" content="<?php echo htmlspecialchars($seoTitle, ENT_QUOTES, 'UTF-8'); ?>">
+    <meta property="og:description" content="<?php echo htmlspecialchars($seoDescription, ENT_QUOTES, 'UTF-8'); ?>">
+    <meta property="og:url" content="<?php echo htmlspecialchars($canonicalUrl, ENT_QUOTES, 'UTF-8'); ?>">
+    <meta property="og:image" content="<?php echo htmlspecialchars($absoluteImage, ENT_QUOTES, 'UTF-8'); ?>">
+    <meta name="twitter:card" content="summary_large_image">
+    <script type="application/ld+json"><?php echo json_encode($localBusinessSchema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?></script>
 </head>
 <body>
 <div class="line" id="main"></div>

@@ -8,7 +8,12 @@ include_once('elements/top-page.php');
 ?>
     <title><?php echo htmlspecialchars($service['title'], ENT_QUOTES, 'UTF-8'); ?></title>
     <meta name="description" content="<?php echo htmlspecialchars($service['description'], ENT_QUOTES, 'UTF-8'); ?>">
-<?php include_once('elements/header.php'); ?>
+<?php
+$seoTitle = $service['title'];
+$seoDescription = $service['description'];
+$seoImage = isset($service['sections']) ? $service['sections'][0]['image'] : $service['image'];
+include_once('elements/header.php');
+?>
 
 <div id="main-content">
     <div id="content">

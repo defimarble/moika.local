@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /sender.php
+Disallow: /under_construction_stub.php

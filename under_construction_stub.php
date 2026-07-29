@@ -1,6 +1,7 @@
 <?php include_once('elements/top-page.php'); ?>
     <title>Страница в разработке - Pirita Pesula</title>
 	<meta name="description" content="✔Ручная мойка автомобиля в Таллинне ✪ Pirita Pesula ✪ ➨ Следите за новостями!">
+    <meta name="robots" content="noindex, follow">
 	
 <?php include_once('elements/header.php'); ?>
 

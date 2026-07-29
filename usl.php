@@ -1,5 +1,6 @@
 <?php include_once('elements/top-page.php'); ?>
     <title>Pirita Pesula</title>
+    <meta name="description" content="Услуги ручной автомойки Pirita Pesula в Таллинне: наружная мойка, чистка салона и комплексный уход за автомобилем.">
 <?php include_once('elements/header.php'); ?>
 
     <div id="main-content">
