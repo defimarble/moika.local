@@ -48,7 +48,7 @@ include_once('elements/header.php');
                 <?php if ($index === count($sections) - 1): ?>
                 <div class="bottom-block">
                     <div class="price"><?php echo htmlspecialchars($service['price'], ENT_QUOTES, 'UTF-8'); ?></div>
-                    <div class="bron-bt" onclick="AlexApp.popup('Детейлинг')">Заказать</div>
+                    <div class="bron-bt" onclick="AlexApp.popup()">Заказать</div>
                 </div>
                 <?php endif; ?>
             </div>

@@ -209,25 +209,44 @@
                 <div class="main-form">
                     <script>
                         $(function(){
-                            $("#booking form").validate({
+                            var $bookingForm = $("#booking-form");
+                            var $bookingStatus = $("#booking-status");
+                            var $submitButton = $bookingForm.find('button[type="submit"]');
+
+                            $.validator.addMethod("internationalPhone", function(value, element) {
+                                return this.optional(element) || /^\+?[0-9\s()\-]{7,20}$/.test(value);
+                            }, "Введите корректный телефон");
+
+                            $("#datepicker").datepicker("option", {
+                                minDate: 0,
+                                dateFormat: "dd.mm.yy"
+                            });
+
+                            $bookingForm.validate({
                                 rules: {
+                                    name: "required",
                                     date: "required",
-                                    auto_number: "required",
                                     time: "required",
                                     tel: {
                                         required: true,
-                                        phoneUS: true
+                                        internationalPhone: true
                                     }
                                 },
                                 messages: {
+                                    name: "Введите имя",
                                     date: "Введите дату",
                                     time: "Введите время",
-                                    tel: "Введите телефон",
-                                    auto_number: "Введите номер"
+                                    tel: {
+                                        required: "Введите телефон",
+                                        internationalPhone: "Введите корректный телефон"
+                                    }
                                 },
                                 ignore: "div:hidden input, div:hidden select",
-                                submitHandler : function(){
-                                    var formData = new FormData($('#booking form')[0]);
+                                errorElement: "span",
+                                submitHandler : function(form){
+                                    var formData = new FormData(form);
+                                    $bookingStatus.removeClass("ok error").text("");
+                                    $submitButton.prop("disabled", true).text("Отправляем…");
                                     $.ajax({
                                         type: "POST",
                                         processData: false,
@@ -235,54 +254,93 @@
                                         url: "sender.php",
                                         data:  formData,
                                         success: function(data){
-                                            $('#booking form').html('<p class="ok">'+data+'</p>');
+                                            $bookingStatus.addClass("ok").text(data);
+                                            form.reset();
+                                            $bookingForm.find("select").trigger("refresh");
+                                        },
+                                        error: function(xhr){
+                                            var message = xhr.responseText || "Не удалось отправить заявку. Позвоните нам по телефону +372 5391 8434.";
+                                            $bookingStatus.addClass("error").text(message);
+                                        },
+                                        complete: function(){
+                                            $submitButton.prop("disabled", false).text("Забронировать");
                                         }
-                                    })
+                                    });
                                 }
                             });
                         });
                     </script>
-                    <form>
+                    <form id="booking-form" action="sender.php" method="post">
                         <ul>
                             <li>
-                                <select name="usl">
-                                    <option value="Мойка">
-                                        Наружная мойка
-                                    </option>
-                                    <option value="Чистка салона">
-                                        Чистка салона
-                                    </option >
-                                    <option value="Детейлинг автомобиля">
-                                        Детейлинг автомобиля
-                                    </option>
-									<option value="Детейлинг яхты">
-                                        Детейлинг яхты
-                                    </option>
+                                <label for="booking-service">Услуга</label>
+                                <select name="usl" id="booking-service" required>
+                                    <option value="">Выберите услугу</option>
+                                    <option value="Наружная мойка">Наружная мойка</option>
+                                    <option value="Чистка салона">Чистка салона</option>
+                                    <option value="Полировка кузова">Полировка кузова</option>
+                                    <option value="Полировка и восстановление фар">Полировка и восстановление фар</option>
+                                    <option value="Химчистка салона">Химчистка салона</option>
+                                    <option value="Химчистка двигателя">Химчистка двигателя</option>
+                                    <option value="Полная очистка автомобиля">Полная очистка автомобиля</option>
+                                    <option value="Покрытие воском">Покрытие воском</option>
+                                    <option value="Покрытие керамикой">Покрытие керамикой</option>
+                                    <option value="Покрытие защитной плёнкой">Покрытие защитной плёнкой</option>
+                                    <option value="Детейлинг автомобиля">Детейлинг автомобиля</option>
+                                    <option value="Детейлинг яхты">Детейлинг яхты</option>
                                 </select>
                             </li>
                             <li>
-                                <input type="tel" name="tel" placeholder="Ваш телефон">
+                                <label for="booking-name">Ваше имя</label>
+                                <input type="text" name="name" id="booking-name" placeholder="Ваше имя *" autocomplete="name" maxlength="80" required>
+                            </li>
+                            <li>
+                                <label for="booking-phone">Ваш телефон</label>
+                                <input type="tel" name="tel" id="booking-phone" placeholder="Телефон, например +372 5555 5555 *" autocomplete="tel" inputmode="tel" maxlength="30" required>
                             </li>
                             <li>
                                 <ul class="sb">
                                     <li>
-                                        <input type="text" name="date" id="datepicker" placeholder="Дата">
+                                        <label for="datepicker">Дата</label>
+                                        <input type="text" name="date" id="datepicker" placeholder="Дата *" autocomplete="off" required>
                                     </li>
                                     <li>
-                                        <input type="text" name="time" placeholder="Время" class="time2">
+                                        <label for="booking-time">Время</label>
+                                        <select name="time" id="booking-time" required>
+                                            <option value="">Время *</option>
+                                            <option value="09:00">09:00</option>
+                                            <option value="10:00">10:00</option>
+                                            <option value="11:00">11:00</option>
+                                            <option value="12:00">12:00</option>
+                                            <option value="13:00">13:00</option>
+                                            <option value="14:00">14:00</option>
+                                            <option value="15:00">15:00</option>
+                                            <option value="16:00">16:00</option>
+                                            <option value="17:00">17:00</option>
+                                            <option value="18:00">18:00</option>
+                                            <option value="19:00">19:00</option>
+                                        </select>
                                     </li>
                                 </ul>
                             </li>
                             <li>
-                                <input type="text" placeholder="Номер авто" name="auto_number" style="width: 48%">
+                                <label for="booking-car">Номер автомобиля</label>
+                                <input type="text" placeholder="Номер автомобиля (необязательно)" name="auto_number" id="booking-car" autocomplete="off" maxlength="20">
                             </li>
                             <li>
-                            <textarea name="message" placeholder="Комментарий"></textarea>
+                                <label for="booking-message">Комментарий</label>
+                                <textarea name="message" id="booking-message" placeholder="Комментарий (необязательно)" maxlength="1000"></textarea>
+                            </li>
+                            <li class="booking-honeypot" aria-hidden="true">
+                                <label for="booking-website">Сайт</label>
+                                <input type="text" name="website" id="booking-website" tabindex="-1" autocomplete="off">
                             </li>
                             <li>
-                                <input type="submit" value="Забронировать" >
+                                <p class="booking-note">Поля со звёздочкой обязательны. Мы свяжемся с вами для подтверждения времени.</p>
+                                <button type="submit">Забронировать</button>
                             </li>
                         </ul>
+                        <div id="booking-status" class="booking-status" role="status" aria-live="polite"></div>
                     </form>
                 </div>
 

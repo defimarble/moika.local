@@ -1024,6 +1024,147 @@ body{
   }
 }
 
+/* Improved booking form */
+#main-booking #booking .left .main-form form {
+  label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    font-size: 14px;
+    font-family: @font-bold;
+  }
+  select {
+    width: 100%;
+  }
+  button[type="submit"] {
+    margin: 0 auto;
+    padding: 0 18px;
+    font-weight: bold;
+    font-family: @font-bold;
+    text-align: center;
+    font-size: 18px;
+    border: 2px solid @orange;
+    border-radius: 7px;
+    min-width: 220px;
+    background-color: @orange;
+    line-height: 57px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    &:hover, &:focus {
+      background-color: @white;
+    }
+    &:disabled {
+      cursor: wait;
+      opacity: 0.7;
+    }
+  }
+  .booking-note {
+    margin: 2px 0 12px;
+    color: #666;
+    font-size: 13px;
+    line-height: 1.4;
+    text-align: left;
+  }
+  .booking-honeypot {
+    position: absolute;
+    left: -9999px;
+  }
+  span.error {
+    display: block;
+    margin-top: 4px;
+    color: #b00020;
+    font-size: 13px;
+  }
+  input.error, textarea.error {
+    border-color: #b00020;
+  }
+  .booking-status {
+    margin-top: 15px;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center;
+    &.ok {
+      color: #287a37;
+    }
+    &.error {
+      color: #b00020;
+    }
+  }
+}
+
+@media screen and (max-width: 479px) {
+  #main-booking #booking {
+    width: auto;
+    padding: 0 15px;
+    .left .main-form form .sb li {
+      float: none;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+#pop-up form {
+  label {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 13px;
+    font-family: @font-bold;
+  }
+  .booking-note {
+    margin: 0 0 10px;
+    color: #666;
+    font-size: 12px;
+    line-height: 1.4;
+  }
+  .booking-honeypot {
+    position: absolute;
+    left: -9999px;
+  }
+  span.error {
+    display: block;
+    margin-top: 3px;
+    color: #b00020;
+    font-size: 12px;
+  }
+  .booking-status {
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 1.4;
+    text-align: center;
+    &.ok {
+      color: #287a37;
+    }
+    &.error {
+      color: #b00020;
+    }
+  }
+}
+
+#main-booking #datepicker,
+#pop-up #datepicker2 {
+  padding-right: 42px!important;
+  background-image: url("../image/arrow-select.png");
+  background-repeat: no-repeat;
+  background-position: right 7px center!important;
+  cursor: pointer;
+}
+
+#main-booking #booking .main-form .sb,
+#pop-up .sb {
+  li:first-child {
+    width: 58%;
+  }
+  li:last-child {
+    width: 38%;
+  }
+  .jq-selectbox__dropdown li {
+    float: none!important;
+    width: 100%!important;
+  }
+}
+
 .price-block__table-wrap {
   clear: both;
   float: none;
@@ -1689,9 +1830,29 @@ input[type='submit'].styler[disabled] {
   }
 }
 .ui-datepicker {
+  .ui-datepicker-header {
+    min-height: 2.2em;
+  }
+  .ui-datepicker-prev,
+  .ui-datepicker-next {
+    z-index: 2;
+  }
   .ui-datepicker-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35em;
+    min-width: 0;
+    margin: 0 2.6em;
+    font-size: 0.9em;
+    line-height: 2em;
+    white-space: nowrap;
     span{
       color: @white!important;
+    }
+    .ui-datepicker-month,
+    .ui-datepicker-year {
+      flex: 0 1 auto;
     }
   }
 }

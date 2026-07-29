@@ -70,17 +70,42 @@ $(document).ready(function () {
     $('select').styler();
 });
 var AlexApp = {
-    popup: function (val) {
-        var active = val;
-        if(active){
-            $( "#pop-up select option" ).each(function() {
-                if($(this).val() == active){
-                    $('#pop-up select option').removeAttr('selected');
-                    $(this).attr('selected','selected');
-                    $('select').trigger('refresh');
-                }
-            });
+    pageService: function () {
+        var page = window.location.pathname.split('/').pop() || 'index.php';
+        var services = {
+            'moika_avto_snaruzhi.php': 'Наружная мойка',
+            'chistka_salona_avto.php': 'Чистка салона',
+            'polirovka_kuzova.php': 'Полировка кузова',
+            'polirovka_far.php': 'Полировка и восстановление фар',
+            'himchistka_salona.php': 'Химчистка салона',
+            'himchistka_dvigatelya.php': 'Химчистка двигателя',
+            'polnaya_ochistka_avtomobilya.php': 'Полная очистка автомобиля',
+            'pokrytie_voskom.php': 'Покрытие воском',
+            'pokrytie_keramikoy.php': 'Покрытие керамикой',
+            'zashchitnaya_plenka.php': 'Покрытие защитной плёнкой',
+            'deteiling_tallinn.php': 'Детейлинг автомобиля',
+            'deteiling_yacht_tallinn.php': 'Детейлинг яхты'
+        };
+        return services[page] || '';
+    },
+    selectService: function (selector, service) {
+        var $select = $(selector);
+        if (!service || !$select.length || !$select.find('option[value="' + service + '"]').length) {
+            return;
         }
+        $select.val(service).trigger('change').trigger('refresh');
+    },
+    popup: function (val) {
+        var aliases = {
+            'Мойка': 'Наружная мойка',
+            'Детейлинг': 'Детейлинг автомобиля',
+            'Детейлинг Яхты': 'Детейлинг яхты'
+        };
+        var active = val || this.pageService();
+        if (aliases[active]) {
+            active = this.pageService() || aliases[active];
+        }
+        this.selectService('#popup-service', active);
         $( "#pop-up" ).dialog(
             {
                 width: Math.min(400, $(window).width() - 20),
@@ -100,6 +125,22 @@ var AlexApp = {
         );
     }
 }
+$(function () {
+    var currentService = AlexApp.pageService();
+    var bookingService = currentService;
+
+    try {
+        if (currentService) {
+            window.sessionStorage.setItem('piritaBookingService', currentService);
+        } else if (window.location.hash === '#booking') {
+            bookingService = window.sessionStorage.getItem('piritaBookingService') || '';
+        }
+    } catch (error) {
+        bookingService = currentService;
+    }
+
+    AlexApp.selectService('#booking-service', bookingService);
+});
 setTimeout(function() {
     if (window.location.hash) {
         var hash = '#'+window.location.hash.substr(1);
