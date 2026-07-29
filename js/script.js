@@ -54,7 +54,29 @@ $(document).ready(function () {
             isRTL: false,
             showMonthAfterYear: false,
             yearSuffix: "" };
-        datepicker.setDefaults( datepicker.regional.ru );
+        datepicker.regional.et = {
+            closeText: "Sulge",
+            prevText: "Eelmine",
+            nextText: "Järgmine",
+            currentText: "Täna",
+            monthNames: [ "Jaanuar","Veebruar","Märts","Aprill","Mai","Juuni",
+                "Juuli","August","September","Oktoober","November","Detsember" ],
+            monthNamesShort: [ "Jaan","Veebr","Märts","Apr","Mai","Juuni",
+                "Juuli","Aug","Sept","Okt","Nov","Dets" ],
+            dayNames: [ "pühapäev","esmaspäev","teisipäev","kolmapäev","neljapäev","reede","laupäev" ],
+            dayNamesShort: [ "P","E","T","K","N","R","L" ],
+            dayNamesMin: [ "P","E","T","K","N","R","L" ],
+            weekHeader: "näd",
+            firstDay: 1,
+            isRTL: false,
+            showMonthAfterYear: false,
+            yearSuffix: "" };
+
+        var calendarLanguage = window.siteLanguage || "ru";
+        var calendarRegional = calendarLanguage === "en"
+            ? datepicker.regional[""]
+            : datepicker.regional[calendarLanguage] || datepicker.regional.ru;
+        datepicker.setDefaults(calendarRegional);
 
         // return datepicker.regional.ru;
 

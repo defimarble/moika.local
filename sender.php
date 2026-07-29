@@ -5,24 +5,38 @@ header('Content-Type: text/plain; charset=utf-8');
 header('X-Content-Type-Options: nosniff');
 header('Cache-Control: no-store');
 
+$responseLanguage = isset($_POST['lang']) && in_array($_POST['lang'], array('ru', 'en', 'et'), true)
+    ? $_POST['lang']
+    : 'ru';
+
+function booking_response($russian, $english, $estonian, $status = 200)
+{
+    global $responseLanguage;
+    http_response_code($status);
+    $messages = array('ru' => $russian, 'en' => $english, 'et' => $estonian);
+    exit($messages[$responseLanguage]);
+}
+
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    http_response_code(405);
     header('Allow: POST');
-    exit('Метод не поддерживается.');
+    booking_response('Метод не поддерживается.', 'Method not allowed.', 'Meetod ei ole lubatud.', 405);
 }
 
 $contentLength = isset($_SERVER['CONTENT_LENGTH']) ? (int) $_SERVER['CONTENT_LENGTH'] : 0;
 if ($contentLength > 32768) {
-    http_response_code(413);
-    exit('Слишком большой объём данных.');
+    booking_response('Слишком большой объём данных.', 'The request is too large.', 'Päring on liiga mahukas.', 413);
 }
 
 $csrfToken = isset($_POST['csrf_token']) && is_string($_POST['csrf_token'])
     ? $_POST['csrf_token']
     : '';
 if (!booking_verify_csrf($csrfToken)) {
-    http_response_code(403);
-    exit('Сессия формы истекла. Обновите страницу и попробуйте снова.');
+    booking_response(
+        'Сессия формы истекла. Обновите страницу и попробуйте снова.',
+        'The form session has expired. Refresh the page and try again.',
+        'Vormi seanss on aegunud. Värskendage lehte ja proovige uuesti.',
+        403
+    );
 }
 
 function booking_value($key, $maxLength)
@@ -49,7 +63,7 @@ $comment = booking_value('message', 1000);
 $website = booking_value('website', 200);
 
 if ($website !== '') {
-    exit('Заявка принята!');
+    booking_response('Заявка принята!', 'Request received!', 'Broneeringutaotlus on vastu võetud!');
 }
 
 $allowedServices = array(
@@ -79,20 +93,29 @@ if (
     $dateObject < $today ||
     !preg_match('/^(09|1[0-9]):00$/', $time)
 ) {
-    http_response_code(422);
-    exit('Проверьте обязательные поля и попробуйте снова.');
+    booking_response(
+        'Проверьте обязательные поля и попробуйте снова.',
+        'Check the required fields and try again.',
+        'Kontrollige kohustuslikke välju ja proovige uuesti.',
+        422
+    );
 }
 
 booking_start_session();
 $lastSentAt = isset($_SESSION['booking_last_sent_at']) ? (int) $_SESSION['booking_last_sent_at'] : 0;
 if ($lastSentAt > 0 && time() - $lastSentAt < 30) {
-    http_response_code(429);
     header('Retry-After: ' . (30 - (time() - $lastSentAt)));
-    exit('Заявка уже отправлена. Подождите немного перед повторной отправкой.');
+    booking_response(
+        'Заявка уже отправлена. Подождите немного перед повторной отправкой.',
+        'The request has already been sent. Please wait before sending another one.',
+        'Taotlus on juba saadetud. Palun oodake enne uue taotluse saatmist.',
+        429
+    );
 }
 
 $subject = 'Новая бронь с сайта Pirita Pesula';
 $message = 'Имя: ' . booking_html($name) . '<br>';
+$message .= 'Язык формы: ' . booking_html(strtoupper($responseLanguage)) . '<br>';
 $message .= 'Услуга: ' . booking_html($service) . '<br>';
 $message .= 'Телефон: ' . booking_html($phone) . '<br>';
 $message .= 'Дата: ' . booking_html($date) . '<br>';
@@ -108,9 +131,17 @@ $headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
 $headers .= 'From: Pirita Pesula <no-reply@pirita-pesula.ee>' . "\r\n";
 
 if (!mail($to, $subject, $message, $headers)) {
-    http_response_code(500);
-    exit('Не удалось отправить заявку. Позвоните нам по телефону +372 5391 8434.');
+    booking_response(
+        'Не удалось отправить заявку. Позвоните нам по телефону +372 5391 8434.',
+        'The request could not be sent. Call us at +372 5391 8434.',
+        'Taotlust ei õnnestunud saata. Helistage meile numbril +372 5391 8434.',
+        500
+    );
 }
 
 $_SESSION['booking_last_sent_at'] = time();
-echo 'Заявка принята! Мы свяжемся с вами для подтверждения времени.';
+booking_response(
+    'Заявка принята! Мы свяжемся с вами для подтверждения времени.',
+    'Request received! We will contact you to confirm the time.',
+    'Broneeringutaotlus on vastu võetud! Võtame teiega aja kinnitamiseks ühendust.'
+);

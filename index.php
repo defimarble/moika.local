@@ -8,17 +8,23 @@
         <div id="slider">
             <ul>
 				<li>
-					<a href="/moika_avto_snaruzhi.php">
+					<a href="moika_avto_snaruzhi.php"
+                       data-title="Наружная мойка автомобиля"
+                       data-copy="Безопасная ручная мойка и тщательная сушка кузова.">
                     <img decoding="async" src="slider/SlideOuterWash_ru.webp" alt="Наружная мойка автомобиля">
 					</a>
                 </li>
 				<li>
-					<a href="/chistka_salona_avto.php">
+					<a href="chistka_salona_avto.php"
+                       data-title="Чистка салона автомобиля"
+                       data-copy="Профессиональная уборка салона для чистоты и комфорта.">
                     <img decoding="async" src="slider/SlideInsideWash_ru.webp" alt="Чистка салона автомобиля">
 					</a>
                 </li>
  				<li>
-					<a href="/polirovka_kuzova.php">
+					<a href="polirovka_kuzova.php"
+                       data-title="Полировка автомобиля"
+                       data-copy="Восстанавливаем блеск кузова и уменьшаем видимость дефектов.">
                     <img decoding="async" src="slider/SlidePolish_ru.webp" alt="Полировка автомобиля">
 					</a>
                 </li>
@@ -251,7 +257,7 @@
                                         type: "POST",
                                         processData: false,
                                         contentType: false,
-                                        url: "sender.php",
+                                        url: "/sender.php",
                                         data:  formData,
                                         success: function(data){
                                             $bookingStatus.addClass("ok").text(data);
@@ -270,8 +276,9 @@
                             });
                         });
                     </script>
-                    <form id="booking-form" action="sender.php" method="post">
+                    <form id="booking-form" action="/sender.php" method="post">
                         <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars(booking_csrf_token(), ENT_QUOTES, 'UTF-8'); ?>">
+                        <input type="hidden" name="lang" value="<?php echo htmlspecialchars(site_language(), ENT_QUOTES, 'UTF-8'); ?>">
                         <ul>
                             <li>
                                 <label for="booking-service">Услуга</label>

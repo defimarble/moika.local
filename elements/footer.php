@@ -91,7 +91,7 @@
                              type: "POST",
                              processData: false,
                              contentType: false,
-                             url: "sender.php",
+                             url: "/sender.php",
                              data:  formData,
                              success: function(data){
                                  $popupStatus.addClass("ok").text(data);
@@ -110,8 +110,9 @@
             });
         });
     </script>
-    <form id="popup-booking-form" action="sender.php" method="post">
+    <form id="popup-booking-form" action="/sender.php" method="post">
         <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars(booking_csrf_token(), ENT_QUOTES, 'UTF-8'); ?>">
+        <input type="hidden" name="lang" value="<?php echo htmlspecialchars(site_language(), ENT_QUOTES, 'UTF-8'); ?>">
         <ul>
             <li>
                 <label for="popup-service">Услуга</label>

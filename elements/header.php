@@ -77,8 +77,9 @@ $localBusinessSchema = [
 ];
 ?>
     <link rel="canonical" href="<?php echo htmlspecialchars($canonicalUrl, ENT_QUOTES, 'UTF-8'); ?>">
+    <?php echo site_hreflang_links(); ?>
     <meta property="og:type" content="website">
-    <meta property="og:locale" content="ru_RU">
+    <meta property="og:locale" content="<?php echo site_language() === 'et' ? 'et_EE' : (site_language() === 'en' ? 'en_GB' : 'ru_RU'); ?>">
     <meta property="og:site_name" content="Pirita Pesula">
     <meta property="og:title" content="<?php echo htmlspecialchars($seoTitle, ENT_QUOTES, 'UTF-8'); ?>">
     <meta property="og:description" content="<?php echo htmlspecialchars($seoDescription, ENT_QUOTES, 'UTF-8'); ?>">
@@ -98,17 +99,17 @@ $localBusinessSchema = [
             <div class="right-block">
                 <ul class="lang">
                     <li>
-                        <a href="under_construction_stub.php">
+                        <a href="<?php echo htmlspecialchars(site_language_url('et'), ENT_QUOTES, 'UTF-8'); ?>"<?php if (site_language() === 'et'): ?> class="active"<?php endif; ?>>
                             EE
                         </a>
                     </li>
                     <li>
-                        <a href="/" class="active">
+                        <a href="<?php echo htmlspecialchars(site_language_url('ru'), ENT_QUOTES, 'UTF-8'); ?>"<?php if (site_language() === 'ru'): ?> class="active"<?php endif; ?>>
                             RU
                         </a>
                     </li>
                     <li>
-                        <a href="under_construction_stub.php">
+                        <a href="<?php echo htmlspecialchars(site_language_url('en'), ENT_QUOTES, 'UTF-8'); ?>"<?php if (site_language() === 'en'): ?> class="active"<?php endif; ?>>
                             ENG
                         </a>
                     </li>

@@ -2444,3 +2444,47 @@ body{
     }
   }
 }
+
+html[lang="en"],
+html[lang="et"] {
+  #main-slider #slider li a {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    &:before {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 51%;
+      background: #0d2b60;
+    }
+    &:after {
+      content: attr(data-title) "\A\A" attr(data-copy);
+      position: absolute;
+      z-index: 2;
+      top: 20%;
+      left: 8%;
+      width: 36%;
+      color: @white;
+      font-size: 17px;
+      line-height: 1.35;
+      white-space: pre-wrap;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  html[lang="en"],
+  html[lang="et"] {
+    #main-slider #slider li a:after {
+      top: 18%;
+      left: 9%;
+      width: 37%;
+      font-size: 12px;
+      line-height: 1.25;
+    }
+  }
+}
