@@ -3,3 +3,45 @@ AddDefaultCharset UTF-8
 RewriteEngine On
 RewriteRule ^sitemap\.xml$ sitemap.php [L]
 ErrorDocument 404 /404.php
+
+# Browser caching for static assets. HTML/PHP responses remain dynamic.
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/css "access plus 7 days"
+    ExpiresByType application/javascript "access plus 7 days"
+    ExpiresByType text/javascript "access plus 7 days"
+    ExpiresByType image/jpeg "access plus 30 days"
+    ExpiresByType image/png "access plus 30 days"
+    ExpiresByType image/gif "access plus 30 days"
+    ExpiresByType image/webp "access plus 30 days"
+    ExpiresByType image/svg+xml "access plus 30 days"
+    ExpiresByType image/x-icon "access plus 30 days"
+    ExpiresByType font/ttf "access plus 30 days"
+    ExpiresByType font/woff "access plus 30 days"
+    ExpiresByType font/woff2 "access plus 30 days"
+    ExpiresByType application/vnd.ms-fontobject "access plus 30 days"
+</IfModule>
+
+<IfModule mod_headers.c>
+    <FilesMatch "\.(?:css|js)$">
+        Header onsuccess unset Cache-Control
+        Header always unset Cache-Control
+        Header always set Cache-Control "public, max-age=604800"
+    </FilesMatch>
+    <FilesMatch "\.(?:jpe?g|png|gif|webp|svg|ico|ttf|woff2?|eot)$">
+        Header onsuccess unset Cache-Control
+        Header always unset Cache-Control
+        Header always set Cache-Control "public, max-age=2592000"
+    </FilesMatch>
+</IfModule>
+
+# Prefer Brotli when the server supports it; gzip remains the fallback.
+<IfModule mod_brotli.c>
+    AddOutputFilterByType BROTLI_COMPRESS text/html text/plain text/css text/xml
+    AddOutputFilterByType BROTLI_COMPRESS application/javascript application/json application/xml
+</IfModule>
+
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml
+    AddOutputFilterByType DEFLATE application/javascript application/json application/xml
+</IfModule>
