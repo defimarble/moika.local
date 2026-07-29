@@ -271,6 +271,7 @@
                         });
                     </script>
                     <form id="booking-form" action="sender.php" method="post">
+                        <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars(booking_csrf_token(), ENT_QUOTES, 'UTF-8'); ?>">
                         <ul>
                             <li>
                                 <label for="booking-service">Услуга</label>
