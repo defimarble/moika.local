@@ -84,10 +84,6 @@ $(document).ready(function () {
         $("#datepicker").datepicker();
         $("#datepicker2").datepicker();
 
-        // Маски для времени
-        $(".time2").inputmask({mask: "Время 99-99", clearMaskOnLostFocus: false});
-        $(".time").inputmask({mask: "Время 99-99", clearMaskOnLostFocus: false});
-
     } ) );
     $('select').styler();
 });
@@ -118,6 +114,11 @@ var AlexApp = {
         $select.val(service).trigger('change').trigger('refresh');
     },
     popup: function (val) {
+        var dialogTitles = {
+            ru: 'Бронь',
+            en: 'Booking',
+            et: 'Broneerimine'
+        };
         var aliases = {
             'Мойка': 'Наружная мойка',
             'Детейлинг': 'Детейлинг автомобиля',
@@ -132,7 +133,7 @@ var AlexApp = {
             {
                 width: Math.min(400, $(window).width() - 20),
                 modal: true,
-                title: 'Бронь',
+                title: dialogTitles[window.siteLanguage] || dialogTitles.ru,
                 dialogClass: 'bron-dialog',
                 open: function() {
                     $('body').addClass('ks_popup_open');
