@@ -32,7 +32,7 @@
                 </div>
                 <div class="left">
                     <div class="img">
-                        <img src="image/Polirovka_kuzova.jpg">
+                        <img src="image/Polirovka_kuzova.jpg" alt="Полировка кузова автомобиля">
                     </div>
                     <div class="bottom-block">
                         <div class="price">
@@ -45,7 +45,7 @@
                 </div>
                 <div class="right">
                     <p>
-<ol style="font-size: 14px; padding-left: 30px;">
+</p><ol style="font-size: 14px; padding-left: 30px;">
 <li>
 <strong>Полная и частичная полировка кузова:</strong> 
 <br><br>					
@@ -102,8 +102,6 @@
 </li>
 
 </ol>
-
-                    </p>
                 </div>
             </div>
             <div class="clear"></div>
@@ -115,12 +113,12 @@
                 </div>
                 <div class="left">
                     <div class="img">
-                        <img src="image/Polirovka_kraski_avtomobila.jpg">
+                        <img src="image/Polirovka_kraski_avtomobila.jpg" alt="Полировка лакокрасочного покрытия автомобиля">
                     </div>
                 </div>
                 <div class="right">
                     <p>
-<ul style="font-size: 14px; padding-left: 30px;">
+</p><ul style="font-size: 14px; padding-left: 30px;">
 <li>
 <strong>Предпродажная подготовка:</strong>
 <br> Полировка как элемент подготовки автомобиля перед продажей, улучшение его внешнего вида и повышение рыночной стоимости.
@@ -144,9 +142,7 @@
 <br> Полировка кузова после снятия наклеек и брендированных элементов, устранение остатков клея и следов от пленок.
 <br><br>
 </li>
-</ul>	
-
-                    </p>
+</ul>
                 </div>
             </div>
             <div class="clear"></div>
@@ -157,12 +153,12 @@
                 </div>
                 <div class="left">
                     <div class="img">
-                        <img src="image/Polirovka_professionalnaja_tallinn.jpg">
+                        <img src="image/Polirovka_professionalnaja_tallinn.jpg" alt="Профессиональная полировка автомобиля в Таллинне">
                     </div>
                 </div>
                 <div class="right">
                     <p>
-<ul style="font-size: 14px; padding-left: 30px;">
+</p><ul style="font-size: 14px; padding-left: 30px;">
 <li>
 <strong>Высокое качество полировки:</strong>
 <br>  Используем только профессиональные средства и оборудование, что гарантирует лучшее качество полировки автомобиля и долгосрочный эффект от нашей работы.
@@ -211,8 +207,7 @@
 
 </li>
 
-</ul>						
-                    </p>
+</ul>
                 </div>
             </div>
             <div class="clear"></div>

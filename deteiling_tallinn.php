@@ -24,7 +24,7 @@
                 </div>
                 <div class="left">
                     <div class="img">
-                        <img src="image/detiling_head_image_470.jpg">
+                        <img src="image/detiling_head_image_470.jpg" alt="Детейлинг автомобиля в Таллинне">
                     </div>
                     <div class="bottom-block">
                         <div class="price">
@@ -46,7 +46,7 @@
 					<br>
                     <p>
 					Лучшие продукты для полировки:
-<ul style="font-size: 14px; padding-left: 30px;">
+</p><ul style="font-size: 14px; padding-left: 30px;">
 <li>
 <strong>Rupes</strong>
 </li>
@@ -69,7 +69,6 @@
 <strong>Sonax</strong>
 </li>
 </ul>
-                    </p>
                 </div>
             </div>
             <div class="clear"></div>

@@ -4,8 +4,8 @@
 <div id="top-line">
     <div id="main-header">
         <div id="header">
-            <a href="http://<?php echo $_SERVER['HTTP_HOST']?>" class="logo">
-                <img src="image/logo.png">
+            <a href="/" class="logo">
+                <img src="image/logo.png" alt="Pirita Pesula">
             </a>
             <div class="right-block">
                 <ul class="lang">
@@ -30,7 +30,7 @@
 		</div>
                 <ul class="contacts">
                     <li>
-					<a href="http://<?php echo $_SERVER['HTTP_HOST']?>#contacts" style="font-size: 18px;">
+					<a href="index.php#contacts" style="font-size: 18px;">
                         Tallinn, Kalamehe tee, 1a
                     </a>
                     </li>

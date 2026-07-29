@@ -9,17 +9,17 @@
             <ul>
 				<li>
 					<a href="/moika_avto_snaruzhi.php">
-                    <img src="slider/SlideOuterWash_ru.jpg" >
+                    <img src="slider/SlideOuterWash_ru.jpg" alt="Наружная мойка автомобиля">
 					</a>
                 </li>
 				<li>
 					<a href="/chistka_salona_avto.php">
-                    <img src="slider/SlideInsideWash_ru.jpg" >
+                    <img src="slider/SlideInsideWash_ru.jpg" alt="Чистка салона автомобиля">
 					</a>
                 </li>
  				<li>
 					<a href="/polirovka_kuzova.php">
-                    <img src="slider/SlidePolish_ru.jpg" >
+                    <img src="slider/SlidePolish_ru.jpg" alt="Полировка автомобиля">
 					</a>
                 </li>
 

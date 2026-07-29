@@ -3,18 +3,18 @@
             <p class="slogan">Наш сервис - самый лучший!</p>
             <ul class="social">
                 <li>
-                    <a href="https://vk.com/piritapesula" target="_blank">
-                        <img src="image/vk.png">
+                    <a href="https://vk.com/piritapesula" target="_blank" rel="noopener noreferrer">
+                        <img src="image/vk.png" alt="Pirita Pesula во ВКонтакте">
                     </a>
                 </li>
                 <li>
-                    <a href="https://www.facebook.com/piritapesula/" target="_blank">
-                        <img src="image/fc.png">
+                    <a href="https://www.facebook.com/piritapesula/" target="_blank" rel="noopener noreferrer">
+                        <img src="image/fc.png" alt="Pirita Pesula в Facebook">
                     </a>
                 </li>
                 <li>
-                    <a href="https://www.instagram.com/piritapesula/" target="_blank">
-                        <img src="image/inst.png">
+                    <a href="https://www.instagram.com/piritapesula/" target="_blank" rel="noopener noreferrer">
+                        <img src="image/inst.png" alt="Pirita Pesula в Instagram">
                     </a>
                 </li>
             </ul>
@@ -35,7 +35,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="http://<?php echo $_SERVER['HTTP_HOST']?>#contacts">
+                    <a href="index.php#contacts">
                         Tallinn, Kalamehe tee, 1a
                     </a>
                 </li>

@@ -34,7 +34,7 @@
                 </div>
                 <div class="right">
                     <p>
-<ol style="font-size: 14px; padding-left: 30px;">
+</p><ol style="font-size: 14px; padding-left: 30px;">
 <li>
 <strong>Наружная мойка автомобилей:<br></strong><br>
 
@@ -89,7 +89,6 @@
 
 </li>
 </ol>
-                    </p>
                 </div>
 
 				<div class="left">
@@ -112,7 +111,7 @@
 				<div class="right">
                     <p>
 
-<ul style="font-size: 14px; padding-left: 30px;">
+</p><ul style="font-size: 14px; padding-left: 30px;">
 <li>
 <strong>Высокое качество: </strong>Используем только проверенные и безопасные средства, которые не наносят вреда автомобилям и окружающей среде.
   
@@ -145,8 +144,6 @@
 
 </li>
 </ul>
-					
-					</p>
 				</div>
 
             

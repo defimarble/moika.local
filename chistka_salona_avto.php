@@ -19,7 +19,7 @@
                 </div>
                 <div class="left">
                     <div class="img">
-                        <img src="image/chistka_salona_avto.jpg">
+                        <img src="image/chistka_salona_avto.jpg" alt="Чистка салона автомобиля">
                     </div>
                     <div class="bottom-block">
                         <div class="price">
@@ -60,7 +60,7 @@
                 </div>
                 <div class="left">
                     <div class="img">
-                        <img src="image/uhod_za_kozhanym_salonom_avto.jpg">
+                        <img src="image/uhod_za_kozhanym_salonom_avto.jpg" alt="Уход за кожаным салоном автомобиля">
                     </div>
                 </div>
                 <div class="right">
@@ -84,7 +84,7 @@
                 </div>
                 <div class="left">
                     <div class="img">
-                        <img src="image/himchistka_avtosalona.jpg">
+                        <img src="image/himchistka_avtosalona.jpg" alt="Химчистка салона автомобиля">
                     </div>
                     
                 </div>
@@ -122,7 +122,7 @@
                 </div>
                 <div class="left">
                     <div class="img">
-                        <img src="image/himija_dlia_chistki_salona_avto_470.jpg">
+                        <img src="image/himija_dlia_chistki_salona_avto_470.jpg" alt="Профессиональная химия для чистки салона">
                     </div>
                     
                 </div>
@@ -133,7 +133,7 @@
 Применяемые средства позволяют бережно очистить, обеспечить профессиональный уход. Использование гипоаллергенных чистящих средств обеспечивает безопасность для здоровья всех пассажиров, включая детей и людей с аллергией.
                     
 					<br>
-						<ul style="font-size: 14px; padding-left: 30px;">
+						</p><ul style="font-size: 14px; padding-left: 30px;">
 <li>
 <strong>Gyeon</strong> - известен высококачественными средствами для ухода за автомобилями, включая покрытия и очистители
 </li>
@@ -153,7 +153,6 @@
 <strong>AutoMagic</strong>- это известный производитель автохимии и автокосметики, один из лидеров индустрии автодетейлинга
 </li>
 						</ul>
-					</p>
 
                 </div>
             </div>

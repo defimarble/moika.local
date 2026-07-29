@@ -62,37 +62,37 @@
 " src="gallery/g9.jpg" /></a>
                     </li>
                     <li>
-                        <a class="fancybox" data-fancybox-group="gallery" href="gallery/g91.jpg" ><img alt="" src="gallery/g91.jpg" /></a>
+                        <a class="fancybox" data-fancybox-group="gallery" href="gallery/g91.jpg" ><img alt="Фото работ Pirita Pesula" src="gallery/g91.jpg" /></a>
                     </li>
                     <li>
-                        <a class="fancybox" data-fancybox-group="gallery" href="gallery/g92.jpg" ><img alt="" src="gallery/g92.jpg" /></a>
+                        <a class="fancybox" data-fancybox-group="gallery" href="gallery/g92.jpg" ><img alt="Фото работ Pirita Pesula" src="gallery/g92.jpg" /></a>
                     </li>
                     <li>
-                        <a class="fancybox" data-fancybox-group="gallery" href="gallery/g93.jpg" ><img alt="" src="gallery/g93.jpg" /></a>
+                        <a class="fancybox" data-fancybox-group="gallery" href="gallery/g93.jpg" ><img alt="Фото работ Pirita Pesula" src="gallery/g93.jpg" /></a>
                     </li>
                     <li>
-                        <a class="fancybox" data-fancybox-group="gallery" href="gallery/g94.jpg" ><img alt="" src="gallery/g94.jpg" /></a>
+                        <a class="fancybox" data-fancybox-group="gallery" href="gallery/g94.jpg" ><img alt="Фото работ Pirita Pesula" src="gallery/g94.jpg" /></a>
                     </li>
                     <li>
-                        <a class="fancybox" data-fancybox-group="gallery" href="gallery/g7.jpg" ><img alt="" src="gallery/g7.jpg" /></a>
+                        <a class="fancybox" data-fancybox-group="gallery" href="gallery/g7.jpg" ><img alt="Фото работ Pirita Pesula" src="gallery/g7.jpg" /></a>
                     </li>					
                     <li>
-                        <a class="fancybox" data-fancybox-group="gallery" href="gallery/g95.jpg" ><img alt="" src="gallery/g95.jpg" /></a>
+                        <a class="fancybox" data-fancybox-group="gallery" href="gallery/g95.jpg" ><img alt="Фото работ Pirita Pesula" src="gallery/g95.jpg" /></a>
                     </li>
                     <li>
-                        <a class="fancybox" data-fancybox-group="gallery" href="gallery/g96.jpg" ><img alt="" src="gallery/g96.jpg" /></a>
+                        <a class="fancybox" data-fancybox-group="gallery" href="gallery/g96.jpg" ><img alt="Фото работ Pirita Pesula" src="gallery/g96.jpg" /></a>
                     </li>
                     <li>
-                        <a class="fancybox" data-fancybox-group="gallery" href="gallery/g97.jpg" ><img alt="" src="gallery/g97.jpg" /></a>
+                        <a class="fancybox" data-fancybox-group="gallery" href="gallery/g97.jpg" ><img alt="Фото работ Pirita Pesula" src="gallery/g97.jpg" /></a>
                     </li>
                     <li>
-                        <a class="fancybox" data-fancybox-group="gallery" href="gallery/98.jpg" ><img alt="" src="gallery/g98.jpg" /></a>
+                        <a class="fancybox" data-fancybox-group="gallery" href="gallery/98.jpg" ><img alt="Фото работ Pirita Pesula" src="gallery/g98.jpg" /></a>
                     </li>
                     <li>
-                        <a class="fancybox" data-fancybox-group="gallery" href="gallery/g99.jpg" ><img alt="" src="gallery/g99.jpg" /></a>
+                        <a class="fancybox" data-fancybox-group="gallery" href="gallery/g99.jpg" ><img alt="Фото работ Pirita Pesula" src="gallery/g99.jpg" /></a>
                     </li>
                     <li>
-                        <a class="fancybox" data-fancybox-group="gallery" href="gallery/g991.jpg" ><img alt="" src="gallery/g991.jpg" /></a>
+                        <a class="fancybox" data-fancybox-group="gallery" href="gallery/g991.jpg" ><img alt="Фото работ Pirita Pesula" src="gallery/g991.jpg" /></a>
                     </li>
                      
                 </ul>

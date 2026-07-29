@@ -37,7 +37,7 @@
                 </div>
                 <div class="left">
                     <div class="img">
-                        <img src="image/Yacht_detailing_tallinn_head_image.jpg">
+                        <img src="image/Yacht_detailing_tallinn_head_image.jpg" alt="Детейлинг яхты в Таллинне">
                     </div>
 
                 </div>
@@ -51,7 +51,7 @@
 <br>
                     </p>
                     <p style="font-size: 14px; padding-left: 30px;">
-<ol style="font-size: 14px; padding-left: 30px;">
+</p><ol style="font-size: 14px; padding-left: 30px;">
 <li>
 <strong>Ультрафиолетовое излучение:</strong> Солнечные лучи разрушают верхний слой гелькоута, вызывая его выцветание и потерю блеска.
 </li>
@@ -116,7 +116,7 @@
                 </div>
                 <div class="left">
                     <div class="img">
-                        <img src="image/Yacht_board_detailing.jpg">
+                        <img src="image/Yacht_board_detailing.jpg" alt="Детейлинг борта яхты">
                     </div>
                     <div class="bottom-block">
                         <div class="price">
@@ -155,7 +155,7 @@
 <br><br>
 <strong>Преимущества регулярного ухода за палубой:</strong>
 <br><br>
-<ul style="font-size: 14px; padding-left: 30px;">
+</p><ul style="font-size: 14px; padding-left: 30px;">
 <li>
 <strong>Сохранение эстетического вида:</strong> Регулярная чистка и полировка помогают поддерживать палубу в отличном состоянии, сохраняя её привлекательный внешний вид.
 </li>
@@ -187,8 +187,7 @@
 <strong>Уход за металлическими элементами:</strong> 
 Полировка и защита металлических деталей палубы.
 </li>
-</ul>	
-					</p>
+</ul>
 					
                 </div>
 				
@@ -201,7 +200,7 @@
                 </div>
                 <div class="left">
                     <div class="img">
-                        <img src="image/Yacht_plenka_detailing.jpg">
+                        <img src="image/Yacht_plenka_detailing.jpg" alt="Защитная плёнка для яхты">
                     </div>
                     <div class="bottom-block">
                         <div class="price">
@@ -219,7 +218,7 @@
 <br><br>
 <strong>Основные этапы внутренней уборки и химчистки салона яхты:</strong>
 <br><br>
-<ol style="font-size: 14px; padding-left: 30px;">
+</p><ol style="font-size: 14px; padding-left: 30px;">
 <li>
 <strong>Первичная уборка:</strong> Удаление поверхностных загрязнений и мусора.
 
