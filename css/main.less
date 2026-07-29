@@ -2122,3 +2122,91 @@ input[type='submit'].styler[disabled] {
     }
   }
 }
+
+// Финальные адаптивные корректировки для внутренних страниц и общих блоков.
+body{
+  overflow-x: hidden;
+}
+
+@media screen and (max-width: 999px){
+  #top-line #main-menu{
+    max-height: calc(100vh - 60px);
+    overflow-y: auto;
+  }
+  #top-line #main-menu #menu .menu li{
+    margin-right: 0;
+  }
+  #top-line #main-menu #menu .menu li a{
+    font-size: 16px;
+    line-height: 36px;
+  }
+  #main-content #content{
+    padding: 50px 10px;
+  }
+  #main-content #content .page-title{
+    font-size: 30px;
+    line-height: 1.25;
+  }
+  #main-content #content .page-title span{
+    max-width: 100%;
+    padding: 0 10px;
+  }
+  #main-content #content .usl-list{
+    width: 100%;
+    max-width: 470px;
+  }
+  #main-content #content .usl-list .left,
+  #main-content #content .usl-list .right{
+    float: none;
+    width: 100%;
+    margin-right: 0;
+  }
+  #main-content #content .usl-list .right{
+    padding-top: 15px;
+  }
+  #main-content #content .service-section{
+    clear: both;
+  }
+  #main-content #content .price-block .title{
+    font-size: 24px;
+  }
+  #main-footer #footer .social,
+  #main-footer #footer .contacts{
+    float: none;
+    width: 220px;
+    margin: 30px auto 0;
+    overflow: hidden;
+  }
+}
+
+@media screen and (max-width: 479px){
+  #main-content #content{
+    padding: 35px 10px;
+  }
+  #main-content #content .page-title{
+    font-size: 24px;
+    overflow-wrap: anywhere;
+  }
+  #main-content #content .usl-list .title{
+    font-size: 23px;
+    line-height: 1.25;
+  }
+  #main-content #content .usl-list .left .bottom-block{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  #main-content #content .usl-list .left .bottom-block .price,
+  #main-content #content .usl-list .left .bottom-block .bron-bt{
+    float: none;
+  }
+  #main-content #content .usl-list .left .bottom-block .price{
+    width: 100%;
+    line-height: 1.3;
+    text-align: center;
+  }
+  .ui-dialog{
+    max-width: calc(100vw - 20px);
+  }
+}

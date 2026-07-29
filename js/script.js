@@ -83,7 +83,7 @@ var AlexApp = {
         }
         $( "#pop-up" ).dialog(
             {
-                width: 400,
+                width: Math.min(400, $(window).width() - 20),
                 modal: true,
                 title: 'Бронь',
                 dialogClass: 'bron-dialog',
