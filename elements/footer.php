@@ -1,3 +1,4 @@
+<?php include_once('elements/related-services.php'); ?>
 <div id="main-footer">
         <div id="footer">
             <p class="slogan">Наш сервис - самый лучший!</p>
