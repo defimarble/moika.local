@@ -2595,6 +2595,7 @@ html[lang="et"] {
     display: flex;
     flex: 1 1 auto;
     align-items: center;
+    justify-content: flex-end;
     min-width: 0;
     width: 100%;
     margin: 0;
@@ -2645,6 +2646,107 @@ html[lang="et"] {
     top: 7px;
     bottom: 7px;
     left: -9px;
+    width: 1px;
+    background: #d7e1ec;
+  }
+  #top-line #main-header #header .right-block .mobile-menu li a {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// One continuous header layout for phones, landscape phones and tablets.
+// Kept last to override conflicting legacy breakpoint rules.
+@media screen and (max-width: 999px) {
+  .tp {
+    height: 50px;
+  }
+  #top-line #main-header {
+    padding: 3px 0;
+  }
+  #top-line #main-header #header {
+    display: flex;
+    position: relative;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 8px;
+  }
+  #top-line #main-header #header .logo {
+    float: none;
+    display: block;
+    flex: 0 0 clamp(96px, 18vw, 160px);
+    width: clamp(96px, 18vw, 160px);
+    height: auto;
+    margin: 0;
+  }
+  #top-line #main-header #header .logo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: none;
+    max-height: 44px;
+    object-fit: contain;
+  }
+  #top-line #main-header #header .right-block {
+    float: none;
+    display: flex;
+    flex: 1 1 auto;
+    align-items: center;
+    min-width: 0;
+    width: auto;
+    margin: 0;
+    margin-left: auto;
+  }
+  #top-line #main-header #header .right-block .lang {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    float: none;
+    display: flex;
+    flex: none;
+    justify-content: center;
+    align-items: center;
+    min-width: 0;
+    margin: 0;
+    transform: translate(-50%, -50%);
+  }
+  #top-line #main-header #header .right-block .lang li {
+    float: none;
+    margin-right: 7px;
+  }
+  #top-line #main-header #header .right-block .lang li a {
+    line-height: 38px;
+  }
+  #top-line #main-header #header .right-block .mobile-menu {
+    float: none;
+    display: flex !important;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: 14px;
+    margin: 0;
+  }
+  #top-line #main-header #header .right-block .mobile-menu li,
+  #top-line #main-header #header .right-block .mobile-menu li:first-child,
+  #top-line #main-header #header .right-block .mobile-menu li:last-child {
+    float: none;
+    width: 38px;
+    height: 38px;
+    margin: 0;
+    background-size: 30px 30px;
+  }
+  #top-line #main-header #header .right-block .mobile-menu li:first-child {
+    background-image: url("../image/white-menu-icon.png");
+  }
+  #top-line #main-header #header .right-block .mobile-menu li:last-child {
+    position: relative;
+    background-image: url("../image/phone-white-mobile-bt.png");
+  }
+  #top-line #main-header #header .right-block .mobile-menu li:last-child:before {
+    content: "";
+    position: absolute;
+    top: 6px;
+    bottom: 6px;
+    left: -8px;
     width: 1px;
     background: #d7e1ec;
   }
