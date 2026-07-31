@@ -1,82 +1,51 @@
 @font-face {
-  font-family: 'open_sansregular';
-  src: url('../fonts/open_sans_.eot');
-  src: url('../fonts/open_sans_.eot?#iefix') format('embedded-opentype'),
-  url('../fonts/open_sans_.woff2') format('woff2'),
-  url('../fonts/open_sans_.woff') format('woff'),
-  url('../fonts/open_sans_.ttf') format('truetype'),
-  url('../fonts/open_sans_.svg#open_sansregular') format('svg');
-  font-weight: normal;
+  font-family: 'Open Sans';
+  src: url('../fonts/open_sans_regular.woff2') format('woff2'),
+       url('../fonts/open_sans_latin_ext_regular.ttf') format('truetype');
+  font-weight: 400;
   font-style: normal;
-
+  font-display: swap;
 }
 @font-face {
-  font-family: 'open_sansbold';
-  src: url('../fonts/open_sans_bold.eot');
-  src: url('../fonts/open_sans_bold.eot?#iefix') format('embedded-opentype'),
-  url('../fonts/open_sans_bold.woff2') format('woff2'),
-  url('../fonts/open_sans_bold.woff') format('woff'),
-  url('../fonts/open_sans_bold.ttf') format('truetype'),
-  url('../fonts/open_sans_bold.svg#open_sansbold') format('svg');
-  font-weight: normal;
+  font-family: 'Open Sans';
+  src: url('../fonts/open_sans_bold_full.woff2') format('woff2'),
+       url('../fonts/open_sans_latin_ext_bold.ttf') format('truetype');
+  font-weight: 700;
   font-style: normal;
-
+  font-display: swap;
 }
 @font-face {
-  font-family: 'open_sansitalic';
-  src: url('../fonts/open_sans_italic.eot');
-  src: url('../fonts/open_sans_italic.eot?#iefix') format('embedded-opentype'),
-  url('../fonts/open_sans_italic.woff2') format('woff2'),
-  url('../fonts/open_sans_italic.woff') format('woff'),
-  url('../fonts/open_sans_italic.ttf') format('truetype'),
-  url('../fonts/open_sans_italic.svg#open_sansitalic') format('svg');
-  font-weight: normal;
-  font-style: normal;
-
+  font-family: 'Open Sans';
+  src: url('../fonts/open_sans_italic_full.woff2') format('woff2'),
+       url('../fonts/open_sans_latin_ext_italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
 }
 @font-face {
-  font-family: 'open_sanslight';
-  src: url('../fonts/open_sans_light.eot');
-  src: url('../fonts/open_sans_light.eot?#iefix') format('embedded-opentype'),
-  url('../fonts/open_sans_light.woff2') format('woff2'),
-  url('../fonts/open_sans_light.woff') format('woff'),
-  url('../fonts/open_sans_light.ttf') format('truetype'),
-  url('../fonts/open_sans_light.svg#open_sanslight') format('svg');
-  font-weight: normal;
+  font-family: 'Open Sans';
+  src: url('../fonts/open_sans_light_full.woff2') format('woff2'),
+       url('../fonts/open_sans_latin_ext_light.ttf') format('truetype');
+  font-weight: 300;
   font-style: normal;
-
-}
-// Full Latin Extended variants for Estonian characters (Ä, Ö, Õ and lowercase).
-@font-face {
-  font-family: 'open_sansregular';
-  src: url('../fonts/open_sans_latin_ext_regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'open_sansbold';
-  src: url('../fonts/open_sans_latin_ext_bold.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'open_sansitalic';
-  src: url('../fonts/open_sans_latin_ext_italic.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'open_sanslight';
-  src: url('../fonts/open_sans_latin_ext_light.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
+  font-display: swap;
 }
 
 //fonts
-@font-regular: 'open_sansregular';
-@font-bold: 'open_sansbold';
-@font-italic: 'open_sansitalic';
-@font-light: 'open_sanslight';
+@font-family: 'Open Sans', Arial, sans-serif;
+@font-regular: @font-family;
+@font-bold: @font-family;
+@font-italic: @font-family;
+@font-light: @font-family;
+
+// Type scale
+@font-size-caption: 12px;
+@font-size-small: 14px;
+@font-size-body: 16px;
+@font-size-lead: 18px;
+@font-size-heading-small: 24px;
+@font-size-heading-medium: 30px;
+@font-size-heading-large: 40px;
 
 //colors
 @grey : #3d3d3d;
@@ -86,6 +55,9 @@
 @light-blue: #e5f2ff;
 body{
   margin: 0 auto !important;
+  font-family: @font-family;
+  font-size: @font-size-body;
+  line-height: 1.5;
 }
 .fancybox-lock .fancybox-overlay {
   overflow: hidden!important;
@@ -549,6 +521,7 @@ body{
           text-align: center;
           text-transform: uppercase;
           font-family: @font-light;
+          font-weight: 300;
           background-color: #436da8;
           font-size: 30px;
           margin-bottom: 26px;
@@ -568,6 +541,8 @@ body{
             border-bottom: 1px solid @white;
             span{
               color: @white;
+              font-family: @font-family;
+              font-weight: 300;
               font-size: 18px;
             }
             font-family: @font-bold;
@@ -576,11 +551,14 @@ body{
           }
           .short-desc{
             float: left;
-            list-style: disc inside;
+            list-style: disc outside;
+            padding-left: 25px;
             margin-top: 15px;
             margin-bottom: 30px;
             li{
               color: @white;
+              font-family: @font-family;
+              font-weight: 300;
               font-size: 18px;
               margin-bottom: 10px;
             }
@@ -2657,7 +2635,7 @@ html[lang="et"] {
 
 // One continuous header layout for phones, landscape phones and tablets.
 // Kept last to override conflicting legacy breakpoint rules.
-@media screen and (max-width: 1199px) {
+@media screen and (max-width: 999px) {
   .tp {
     height: 50px;
   }
@@ -2692,8 +2670,9 @@ html[lang="et"] {
     display: flex;
     flex: 1 1 auto;
     align-items: center;
+    justify-content: flex-end;
     min-width: 0;
-    width: auto;
+    width: 100%;
     margin: 0;
     margin-left: auto;
   }
@@ -2723,7 +2702,7 @@ html[lang="et"] {
     flex: 0 0 auto;
     align-items: center;
     gap: 14px;
-    margin: 0;
+    margin: 0 0 0 auto;
   }
   #top-line #main-header #header .right-block .mobile-menu li,
   #top-line #main-header #header .right-block .mobile-menu li:first-child,
@@ -2967,6 +2946,12 @@ html[lang="et"] {
     align-self: center;
   }
 }
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
 
 // Единая типографика для контактных блоков футера.
 #main-footer #footer .work-time,
@@ -2974,7 +2959,8 @@ html[lang="et"] {
 #main-footer #footer .contacts li a,
 #main-footer #footer .contacts li:last-child a,
 #main-footer #footer .contacts li:nth-child(2) a {
-  font-family: 'open_sanslight';
+  font-family: @font-family;
+  font-weight: 300;
   font-size: 16px;
 }
 
@@ -2994,4 +2980,52 @@ html[lang="et"] {
 
 #main-footer #footer .contacts li a {
   display: block;
+}
+
+// Consistent weights and rhythm for the unified Open Sans family.
+#top-line #main-menu #menu .menu > li > a,
+#top-line #main-header #header .right-block .bron-bt,
+#main-service #service .service-list > li .bt-bron,
+#main-service #service .service-list > li .list .sub-title,
+#main-booking #booking .left .main-form form label,
+#main-booking #booking .left .main-form form button[type=submit],
+#main-footer #footer .work-time span,
+#pop-up form label {
+  font-weight: 700;
+}
+
+#main-advantages #advantages .block-title,
+#main-service #service .block-title,
+#main-booking #booking .left .title,
+#main-booking #booking .right .number,
+#main-content #content .page-title,
+.related-services h2,
+#main-footer #footer .work-time,
+#main-footer #footer .contacts {
+  font-weight: 300;
+}
+
+#main-footer #footer .work-time span {
+  font-weight: 700;
+}
+
+#main-footer #footer .slogan {
+  font-family: @font-family;
+  font-weight: 400;
+  font-style: italic;
+}
+
+#top-line #main-header #header .right-block .contacts,
+#top-line #main-header #header .right-block .contacts li,
+#top-line #main-header #header .right-block .contacts li a {
+  font-family: @font-family;
+  font-weight: 300;
+}
+
+.ui-widget,
+.ui-widget input,
+.ui-widget select,
+.ui-widget textarea,
+.ui-widget button {
+  font-family: @font-family;
 }
