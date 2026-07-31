@@ -86,7 +86,7 @@
                         <a class="fancybox" data-fancybox-group="gallery" href="gallery/g97.jpg" ><img loading="lazy" decoding="async" alt="Фото работ Pirita Pesula" src="gallery/g97.webp" /></a>
                     </li>
                     <li>
-                        <a class="fancybox" data-fancybox-group="gallery" href="gallery/98.jpg" ><img loading="lazy" decoding="async" alt="Фото работ Pirita Pesula" src="gallery/g98.webp" /></a>
+                        <a class="fancybox" data-fancybox-group="gallery" href="gallery/g98.jpg" ><img loading="lazy" decoding="async" alt="Фото работ Pirita Pesula" src="gallery/g98.webp" /></a>
                     </li>
                     <li>
                         <a class="fancybox" data-fancybox-group="gallery" href="gallery/g99.jpg" ><img loading="lazy" decoding="async" alt="Фото работ Pirita Pesula" src="gallery/g99.webp" /></a>

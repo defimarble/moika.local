@@ -9,6 +9,12 @@ RewriteCond %{HTTP_HOST} ^www\.mexire\.ee(?::\d+)?$ [NC]
 RewriteRule ^ https://mexire.ee%{REQUEST_URI} [R=301,L,NE]
 
 RewriteRule ^sitemap\.xml$ sitemap.php [L]
+
+# Route localized virtual PHP pages through the language front controllers.
+# The target page is validated against site_public_pages() in localized-page.php.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(en|et)/([a-z0-9_-]+\.php)$ $1/index.php?page=$2 [L,QSA]
+
 ErrorDocument 404 /404.php
 
 # Browser caching for static assets. HTML/PHP responses remain dynamic.
