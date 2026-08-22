@@ -1,13 +1,54 @@
+/* Theme tokens */
+:root {
+  --theme-accent: #fdb714;
+  --theme-focus: #4e79b6;
+  --theme-toggle-bg: #fff;
+  --theme-toggle-color: #26364d;
+  --theme-toggle-shadow: 0 5px 18px rgba(0, 0, 0, .22);
+}
+
 html[data-theme="light"] {
   color-scheme: light;
   background-color: #fff;
 }
+
 html[data-theme="light"] body {
   background-color: #fff;
   color: #3d3d3d;
 }
-html[data-theme="dark"] { color-scheme: dark; }
 
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --theme-accent: #c49a3a;
+  --theme-focus: #58738d;
+  --theme-page-bg: #10151d;
+  --theme-surface: #151c26;
+  --theme-surface-raised: #1d2633;
+  --theme-surface-field: #202a37;
+  --theme-surface-price: #25303e;
+  --theme-surface-section: #111821;
+  --theme-menu-bg: #30465f;
+  --theme-service-bg: #263d56;
+  --theme-service-bg-alt: #2d4863;
+  --theme-service-title-bg: #203449;
+  --theme-service-title-bg-alt: #263d54;
+  --theme-service-text: #d6d8dc;
+  --theme-border: #394554;
+  --theme-field-border: #b8c0c9;
+  --theme-field-focus: #587b99;
+  --theme-text: #9a948b;
+  --theme-text-soft: #9a948b;
+  --theme-booking-heading: #9a948b;
+  --theme-booking-label: #9a948b;
+  --theme-text-field: #9a948b;
+  --theme-booking-note: #9a948b;
+  --theme-link: #9a948b;
+  --theme-toggle-bg: #202a37;
+  --theme-toggle-color: #d1ae61;
+  background-color: var(--theme-page-bg);
+}
+
+/* Theme toggle */
 .theme-toggle {
   position: fixed;
   z-index: 1200;
@@ -18,62 +59,321 @@ html[data-theme="dark"] { color-scheme: dark; }
   height: 46px;
   padding: 0;
   place-items: center;
-  border: 2px solid #fdb714;
+  border: 2px solid var(--theme-accent);
   border-radius: 50%;
-  background: #fff;
-  color: #26364d;
-  box-shadow: 0 5px 18px rgba(0, 0, 0, .22);
+  background: var(--theme-toggle-bg);
+  color: var(--theme-toggle-color);
+  box-shadow: var(--theme-toggle-shadow);
   cursor: pointer;
   transition: background-color .2s ease, color .2s ease, transform .2s ease;
 }
-.theme-toggle:hover { transform: translateY(-2px); }
-.theme-toggle:focus-visible { outline: 3px solid #4e79b6; outline-offset: 3px; }
-.theme-toggle span { grid-area: 1 / 1; color: inherit; font-size: 25px; line-height: 1; }
-.theme-toggle__sun { display: none; }
-html[data-theme="dark"] .theme-toggle__sun { display: block; }
-html[data-theme="dark"] .theme-toggle__moon { display: none; }
 
-html[data-theme="dark"],
-html[data-theme="dark"] body { background-color: #10151d; color: #e7edf5; }
-html[data-theme="dark"] * { border-color: #394554; }
+.theme-toggle:hover {
+  transform: translateY(-2px);
+}
+
+.theme-toggle:focus-visible {
+  outline: 3px solid var(--theme-focus);
+  outline-offset: 3px;
+}
+
+.theme-toggle span {
+  grid-area: 1 / 1;
+  color: inherit;
+  font-size: 25px;
+  line-height: 1;
+}
+
+.theme-toggle__sun {
+  display: none;
+}
+
+html[data-theme="dark"] .theme-toggle__sun {
+  display: block;
+}
+
+html[data-theme="dark"] .theme-toggle__moon {
+  display: none;
+}
+
+/* Dark theme: typography */
+html[data-theme="dark"] body {
+  background-color: var(--theme-page-bg);
+  color: var(--theme-text);
+}
+
+html[data-theme="dark"] * {
+  border-color: var(--theme-border);
+}
+
 html[data-theme="dark"] body,
-html[data-theme="dark"] p,
-html[data-theme="dark"] li,
-html[data-theme="dark"] label,
-html[data-theme="dark"] span,
-html[data-theme="dark"] strong,
-html[data-theme="dark"] em,
-html[data-theme="dark"] h1,
-html[data-theme="dark"] h2,
-html[data-theme="dark"] h3,
-html[data-theme="dark"] h4 { color: #e7edf5; }
-html[data-theme="dark"] a { color: #a9c9f5; }
+html[data-theme="dark"] body * {
+  color: var(--theme-text-field) !important;
+  -webkit-text-fill-color: var(--theme-text-field) !important;
+}
+
+html[data-theme="dark"] a {
+  color: var(--theme-link) !important;
+}
+
+/* Dark theme: layout surfaces */
 html[data-theme="dark"] #top-line,
 html[data-theme="dark"] #top-line #main-header,
 html[data-theme="dark"] #main-content,
 html[data-theme="dark"] #main-content #content,
 html[data-theme="dark"] .ui-dialog,
-html[data-theme="dark"] .ui-widget-content { background-color: #151c26; color: #e7edf5; }
-html[data-theme="dark"] #top-line #main-menu { background-color: #263f68; }
+html[data-theme="dark"] .ui-widget-content {
+  background-color: var(--theme-surface);
+  color: var(--theme-text);
+}
+
+html[data-theme="dark"] #top-line #main-menu {
+  background-color: var(--theme-menu-bg);
+}
+
+html[data-theme="dark"] #top-line #main-menu #menu .menu > li > a,
+html[data-theme="dark"] #top-line #main-menu #menu .menu li .sub-menu a {
+  color: var(--theme-text-field);
+  -webkit-text-fill-color: var(--theme-text-field);
+}
+
+html[data-theme="dark"] #top-line #main-menu #menu .menu-item-has-children::before {
+  border-top-color: var(--theme-text-field);
+}
+
 html[data-theme="dark"] #top-line #main-menu #menu .menu li .sub-menu,
-html[data-theme="dark"] .related-services__card { background-color: #1d2633; box-shadow: 0 8px 22px rgba(0, 0, 0, .28); }
+html[data-theme="dark"] .related-services__card {
+  background-color: var(--theme-surface-raised);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, .28);
+}
+
 html[data-theme="dark"] #top-line #main-menu #menu .menu li .sub-menu a,
-html[data-theme="dark"] #main-content #content .usl-list .right p { color: #d8e0ea; }
-html[data-theme="dark"] #main-content #content .page-title span { background-color: #151c26; }
-html[data-theme="dark"] #main-content #content .price-block ul.price li { background-color: #25303e; color: #e7edf5; }
-html[data-theme="dark"] .related-services { background-color: #111821; }
+html[data-theme="dark"] #main-content #content .usl-list .right p {
+  color: var(--theme-text-soft);
+}
+
+html[data-theme="dark"] #main-content #content .page-title span {
+  background-color: var(--theme-surface);
+}
+
+html[data-theme="dark"] #main-content #content .price-block ul.price li {
+  background-color: var(--theme-surface-price);
+  color: var(--theme-text);
+}
+
+html[data-theme="dark"] .related-services {
+  background-color: var(--theme-surface-section);
+}
+
+/* Dark theme: main services only. */
+html[data-theme="dark"] #main-service #service .service-list > li {
+  background-color: var(--theme-service-bg);
+}
+
+html[data-theme="dark"] #main-service #service .service-list > li:nth-child(2) {
+  background-color: var(--theme-service-bg-alt);
+}
+
+html[data-theme="dark"] #main-service #service .service-list > li .title {
+  background-color: var(--theme-service-title-bg);
+}
+
+html[data-theme="dark"] #main-service #service .service-list > li:nth-child(2) .title {
+  background-color: var(--theme-service-title-bg-alt);
+}
+
+html[data-theme="dark"] #main-service #service,
+html[data-theme="dark"] #main-service #service * {
+  color: var(--theme-service-text) !important;
+  -webkit-text-fill-color: var(--theme-service-text) !important;
+}
+
+/* Dark theme: embedded Google map. */
+html[data-theme="dark"] #main-map,
+html[data-theme="dark"] #main-map #map {
+  background-color: var(--theme-page-bg);
+}
+
+html[data-theme="dark"] #main-map iframe {
+  filter: invert(.9) hue-rotate(180deg) saturate(.65) brightness(.82) contrast(.92);
+}
+
+/* Dark theme: footer typography matches the booking form. */
+html[data-theme="dark"] #main-footer,
+html[data-theme="dark"] #main-footer #footer,
+html[data-theme="dark"] #main-footer #footer::after {
+  background-color: var(--theme-page-bg);
+}
+
+html[data-theme="dark"] #main-footer #footer,
+html[data-theme="dark"] #main-footer #footer .slogan,
+html[data-theme="dark"] #main-footer #footer .work-time,
+html[data-theme="dark"] #main-footer #footer .work-time span,
+html[data-theme="dark"] #main-footer #footer .contacts,
+html[data-theme="dark"] #main-footer #footer .contacts li,
+html[data-theme="dark"] #main-footer #footer .contacts li a,
+html[data-theme="dark"] #main-footer #footer .contacts li:last-child a,
+html[data-theme="dark"] #main-footer #footer .copyright {
+  color: var(--theme-text-field);
+  -webkit-text-fill-color: var(--theme-text-field);
+}
+
+html[data-theme="dark"] #main-footer #footer .social img {
+  filter: brightness(0) saturate(100%) invert(62%) sepia(8%) saturate(377%) hue-rotate(353deg) brightness(94%) contrast(89%);
+}
+
+html[data-theme="dark"] #main-footer #footer .work-time,
+html[data-theme="dark"] #main-footer #footer .contacts li {
+  position: relative;
+  background-image: none !important;
+}
+
+html[data-theme="dark"] #main-footer #footer .work-time::before,
+html[data-theme="dark"] #main-footer #footer .contacts li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  background-color: var(--theme-text-field);
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  -webkit-mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+}
+
+html[data-theme="dark"] #main-footer #footer .work-time::before {
+  top: 5px;
+  mask-image: url("../image/time-icon.png");
+  -webkit-mask-image: url("../image/time-icon.png");
+}
+
+html[data-theme="dark"] #main-footer #footer .contacts li::before {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+html[data-theme="dark"] #main-footer #footer .contacts li:first-child::before {
+  mask-image: url("../image/phone-icon-footer.png");
+  -webkit-mask-image: url("../image/phone-icon-footer.png");
+}
+
+html[data-theme="dark"] #main-footer #footer .contacts li:nth-child(2)::before {
+  mask-image: url("../image/mail-icon.png");
+  -webkit-mask-image: url("../image/mail-icon.png");
+}
+
+html[data-theme="dark"] #main-footer #footer .contacts li:last-child::before {
+  mask-image: url("../image/locate-footer.png");
+  -webkit-mask-image: url("../image/locate-footer.png");
+}
+
+/* Dark theme: muted brand accents */
+html[data-theme="dark"] #top-line #main-header #header .right-block .bron-bt,
+html[data-theme="dark"] #main-service #service .service-list > li .bt-bron,
+html[data-theme="dark"] #main-booking #booking .left .main-form form button[type="submit"],
+html[data-theme="dark"] .bron-dialog form > ul > li input[type="submit"] {
+  border-color: var(--theme-accent);
+  background-color: var(--theme-accent);
+}
+
+html[data-theme="dark"] .jq-selectbox__trigger-arrow {
+  filter: saturate(.58) brightness(.86);
+}
+
+html[data-theme="dark"] img {
+  opacity: .93;
+}
+
+/* Dark theme: form controls */
 html[data-theme="dark"] input,
 html[data-theme="dark"] textarea,
 html[data-theme="dark"] select,
 html[data-theme="dark"] .jq-selectbox__select,
-html[data-theme="dark"] .jq-selectbox__dropdown { background-color: #202a37; color: #f1f5fa; border-color: #4b596b; }
-html[data-theme="dark"] .theme-toggle { background-color: #202a37; color: #ffd36b; }
-html[data-theme="dark"] img { opacity: .93; }
-
-@media screen and (max-width: 999px) {
-  .theme-toggle { top: 62px; right: 10px; width: 42px; height: 42px; }
-  .theme-toggle span { font-size: 23px; }
+html[data-theme="dark"] .jq-selectbox__dropdown {
+  background-color: var(--theme-surface-field);
+  color: var(--theme-text-field);
+  border-color: var(--theme-field-border);
 }
+
+html[data-theme="dark"] #main-booking #booking .left .title,
+html[data-theme="dark"] #main-booking #booking .left .main-form form label,
+html[data-theme="dark"] #pop-up form label {
+  color: var(--theme-booking-label);
+  -webkit-text-fill-color: var(--theme-booking-label);
+}
+
+html[data-theme="dark"] #main-booking #booking .left .title {
+  color: var(--theme-booking-heading);
+  -webkit-text-fill-color: var(--theme-booking-heading);
+}
+
+html[data-theme="dark"] #main-booking #booking .left .main-form form input,
+html[data-theme="dark"] #main-booking #booking .left .main-form form textarea,
+html[data-theme="dark"] #main-booking #booking .left .main-form form select,
+html[data-theme="dark"] #main-booking #booking .left .main-form form .jq-selectbox__select,
+html[data-theme="dark"] #main-booking #booking .left .main-form form .jq-selectbox__select-text,
+html[data-theme="dark"] #main-booking #booking .left .main-form form .jq-selectbox .placeholder,
+html[data-theme="dark"] #main-booking #booking .left .main-form form .jq-selectbox__dropdown li,
+html[data-theme="dark"] #pop-up form input,
+html[data-theme="dark"] #pop-up form textarea,
+html[data-theme="dark"] #pop-up form select,
+html[data-theme="dark"] #pop-up form .jq-selectbox__select-text,
+html[data-theme="dark"] #pop-up form .jq-selectbox .placeholder,
+html[data-theme="dark"] #pop-up form .jq-selectbox__dropdown li {
+  color: var(--theme-text-field);
+  -webkit-text-fill-color: var(--theme-text-field);
+}
+
+html[data-theme="dark"] #booking-service-styler .jq-selectbox__select,
+html[data-theme="dark"] #booking-time-styler .jq-selectbox__select {
+  border: 1px solid var(--theme-field-border);
+  box-shadow: none;
+}
+
+html[data-theme="dark"] #booking-service-styler:hover .jq-selectbox__select,
+html[data-theme="dark"] #booking-time-styler:hover .jq-selectbox__select,
+html[data-theme="dark"] #booking-service-styler.focused .jq-selectbox__select,
+html[data-theme="dark"] #booking-time-styler.focused .jq-selectbox__select,
+html[data-theme="dark"] #booking-service-styler.opened .jq-selectbox__select,
+html[data-theme="dark"] #booking-time-styler.opened .jq-selectbox__select {
+  border-color: var(--theme-field-focus);
+  box-shadow: 0 0 0 1px rgba(88, 123, 153, .3);
+}
+
+html[data-theme="dark"] #main-booking #booking .left .main-form form input::placeholder,
+html[data-theme="dark"] #main-booking #booking .left .main-form form textarea::placeholder,
+html[data-theme="dark"] #pop-up form input::placeholder,
+html[data-theme="dark"] #pop-up form textarea::placeholder {
+  color: var(--theme-text-field);
+  opacity: 1;
+  -webkit-text-fill-color: var(--theme-text-field);
+}
+
+html[data-theme="dark"] #main-booking #booking .booking-note,
+html[data-theme="dark"] #pop-up form .booking-note {
+  color: var(--theme-booking-note);
+  -webkit-text-fill-color: var(--theme-booking-note);
+}
+
+/* Responsive placement */
+@media screen and (max-width: 999px) {
+  .theme-toggle {
+    top: 62px;
+    right: 10px;
+    width: 42px;
+    height: 42px;
+  }
+
+  .theme-toggle span {
+    font-size: 23px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .theme-toggle { transition: none; }
+  .theme-toggle {
+    transition: none;
+  }
 }
