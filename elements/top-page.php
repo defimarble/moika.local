@@ -2,6 +2,7 @@
 require_once __DIR__ . '/booking-security.php';
 require_once __DIR__ . '/i18n.php';
 booking_start_session();
+site_apply_device_language();
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo htmlspecialchars(site_language(), ENT_QUOTES, 'UTF-8'); ?>">

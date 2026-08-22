@@ -11,6 +11,99 @@ function site_language()
     return in_array($language, site_supported_languages(), true) ? $language : 'ru';
 }
 
+function site_browser_language()
+{
+    $header = isset($_SERVER['HTTP_ACCEPT_LANGUAGE']) ? trim((string) $_SERVER['HTTP_ACCEPT_LANGUAGE']) : '';
+    if ($header === '') {
+        return 'en';
+    }
+
+    $candidates = array();
+    foreach (explode(',', $header) as $position => $part) {
+        $segments = array_map('trim', explode(';', $part));
+        $language = strtolower(str_replace('_', '-', $segments[0]));
+        $language = substr($language, 0, 2);
+        $quality = 1.0;
+
+        if (isset($segments[1]) && preg_match('/^q=([0-9.]+)$/i', $segments[1], $matches)) {
+            $quality = (float) $matches[1];
+        }
+
+        if (in_array($language, site_supported_languages(), true) && $quality > 0) {
+            $candidates[] = array(
+                'language' => $language,
+                'quality' => $quality,
+                'position' => $position
+            );
+        }
+    }
+
+    if (!$candidates) {
+        return 'en';
+    }
+
+    usort($candidates, function ($left, $right) {
+        if ($left['quality'] === $right['quality']) {
+            return $left['position'] - $right['position'];
+        }
+        return $left['quality'] < $right['quality'] ? 1 : -1;
+    });
+
+    return $candidates[0]['language'];
+}
+
+function site_remember_language($language)
+{
+    if (!in_array($language, site_supported_languages(), true) || headers_sent()) {
+        return;
+    }
+
+    $secure = !empty($_SERVER['HTTPS']) && strtolower((string) $_SERVER['HTTPS']) !== 'off';
+    setcookie('site_language', $language, array(
+        'expires' => time() + 31536000,
+        'path' => '/',
+        'secure' => $secure,
+        'httponly' => false,
+        'samesite' => 'Lax'
+    ));
+    $_COOKIE['site_language'] = $language;
+}
+
+function site_apply_device_language()
+{
+    $method = isset($_SERVER['REQUEST_METHOD']) ? strtoupper((string) $_SERVER['REQUEST_METHOD']) : 'GET';
+    if ($method !== 'GET' && $method !== 'HEAD') {
+        return;
+    }
+
+    $currentLanguage = site_language();
+    $savedLanguage = isset($_COOKIE['site_language']) ? strtolower((string) $_COOKIE['site_language']) : '';
+    $hasSavedLanguage = in_array($savedLanguage, site_supported_languages(), true);
+
+    if ($hasSavedLanguage) {
+        if ($savedLanguage !== $currentLanguage) {
+            site_remember_language($currentLanguage);
+        }
+        return;
+    }
+
+    if ($currentLanguage !== 'ru') {
+        site_remember_language($currentLanguage);
+        return;
+    }
+
+    $preferredLanguage = site_browser_language();
+    site_remember_language($preferredLanguage);
+
+    if ($preferredLanguage === 'ru' || headers_sent()) {
+        return;
+    }
+
+    header('Vary: Accept-Language', false);
+    header('Location: ' . site_language_url($preferredLanguage, site_current_page()), true, 302);
+    exit;
+}
+
 function site_public_pages()
 {
     return array(

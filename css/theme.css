@@ -131,6 +131,11 @@ html[data-theme="dark"] #top-line #main-menu {
   background-color: var(--theme-menu-bg);
 }
 
+html[data-theme="dark"] #top-line #main-header #header .right-block .lang li a.active {
+  color: #d6d8dc !important;
+  -webkit-text-fill-color: #d6d8dc !important;
+}
+
 html[data-theme="dark"] #top-line #main-menu #menu .menu > li > a,
 html[data-theme="dark"] #top-line #main-menu #menu .menu li .sub-menu a {
   color: var(--theme-text-field);
