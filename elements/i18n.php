@@ -77,12 +77,26 @@ function site_apply_device_language()
     }
 
     $currentLanguage = site_language();
+    $selectedLanguage = isset($_GET['set_language']) ? strtolower((string) $_GET['set_language']) : '';
+
+    if (in_array($selectedLanguage, site_supported_languages(), true)) {
+        site_remember_language($selectedLanguage);
+
+        if (!headers_sent()) {
+            header('Location: ' . site_language_url($selectedLanguage, site_current_page()), true, 302);
+            exit;
+        }
+
+        return;
+    }
+
     $savedLanguage = isset($_COOKIE['site_language']) ? strtolower((string) $_COOKIE['site_language']) : '';
     $hasSavedLanguage = in_array($savedLanguage, site_supported_languages(), true);
 
     if ($hasSavedLanguage) {
         if ($savedLanguage !== $currentLanguage) {
-            site_remember_language($currentLanguage);
+            header('Location: ' . site_language_url($savedLanguage, site_current_page()), true, 302);
+            exit;
         }
         return;
     }
@@ -151,6 +165,11 @@ function site_language_url($language, $page = null)
     }
 
     return '/' . $language . '/' . $page;
+}
+
+function site_language_selection_url($language, $page = null)
+{
+    return site_language_url($language, $page) . '?set_language=' . rawurlencode($language);
 }
 
 function site_translation_map($language)

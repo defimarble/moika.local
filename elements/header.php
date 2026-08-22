@@ -103,17 +103,17 @@ $localBusinessSchema = [
             <div class="right-block">
                 <ul class="lang">
                     <li>
-                        <a href="<?php echo htmlspecialchars(site_language_url('et'), ENT_QUOTES, 'UTF-8'); ?>"<?php if (site_language() === 'et'): ?> class="active"<?php endif; ?>>
+                        <a href="<?php echo htmlspecialchars(site_language_selection_url('et'), ENT_QUOTES, 'UTF-8'); ?>"<?php if (site_language() === 'et'): ?> class="active"<?php endif; ?>>
                             EE
                         </a>
                     </li>
                     <li>
-                        <a href="<?php echo htmlspecialchars(site_language_url('ru'), ENT_QUOTES, 'UTF-8'); ?>"<?php if (site_language() === 'ru'): ?> class="active"<?php endif; ?>>
+                        <a href="<?php echo htmlspecialchars(site_language_selection_url('ru'), ENT_QUOTES, 'UTF-8'); ?>"<?php if (site_language() === 'ru'): ?> class="active"<?php endif; ?>>
                             RU
                         </a>
                     </li>
                     <li>
-                        <a href="<?php echo htmlspecialchars(site_language_url('en'), ENT_QUOTES, 'UTF-8'); ?>"<?php if (site_language() === 'en'): ?> class="active"<?php endif; ?>>
+                        <a href="<?php echo htmlspecialchars(site_language_selection_url('en'), ENT_QUOTES, 'UTF-8'); ?>"<?php if (site_language() === 'en'): ?> class="active"<?php endif; ?>>
                             ENG
                         </a>
                     </li>

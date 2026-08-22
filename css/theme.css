@@ -472,3 +472,63 @@ html[data-theme="dark"] #main-advantages #advantages .advantages-list li:last-ch
 html[data-theme="dark"] #main-service #service .full-price span::after {
   filter: invert(1) hue-rotate(180deg);
 }
+
+/* Dark theme: neutral interaction feedback */
+html[data-theme="dark"] a,
+html[data-theme="dark"] button,
+html[data-theme="dark"] input,
+html[data-theme="dark"] select,
+html[data-theme="dark"] textarea,
+html[data-theme="dark"] [role="button"],
+html[data-theme="dark"] [onclick],
+html[data-theme="dark"] .jq-selectbox,
+html[data-theme="dark"] .ui-state-default,
+html[data-theme="dark"] .fancybox {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html[data-theme="dark"] a:focus,
+html[data-theme="dark"] button:focus,
+html[data-theme="dark"] input:focus,
+html[data-theme="dark"] select:focus,
+html[data-theme="dark"] textarea:focus,
+html[data-theme="dark"] [role="button"]:focus,
+html[data-theme="dark"] [tabindex]:not([tabindex="-1"]):focus,
+html[data-theme="dark"] .jq-selectbox.focused {
+  outline-color: transparent;
+  box-shadow: none;
+}
+
+html[data-theme="dark"] a:focus-visible,
+html[data-theme="dark"] button:focus-visible,
+html[data-theme="dark"] input:focus-visible,
+html[data-theme="dark"] select:focus-visible,
+html[data-theme="dark"] textarea:focus-visible,
+html[data-theme="dark"] [role="button"]:focus-visible,
+html[data-theme="dark"] [tabindex]:not([tabindex="-1"]):focus-visible {
+  outline: 1px solid var(--theme-text-field);
+  outline-offset: 2px;
+  box-shadow: none;
+}
+
+html[data-theme="dark"] input,
+html[data-theme="dark"] select,
+html[data-theme="dark"] textarea {
+  accent-color: var(--theme-accent);
+}
+
+html[data-theme="dark"] ::selection {
+  background-color: rgba(154, 148, 139, .35);
+  color: var(--theme-service-text);
+}
+
+html[data-theme="dark"] .ui-state-hover,
+html[data-theme="dark"] .ui-widget-content .ui-state-hover,
+html[data-theme="dark"] .ui-widget-header .ui-state-hover,
+html[data-theme="dark"] .ui-state-focus,
+html[data-theme="dark"] .ui-widget-content .ui-state-focus,
+html[data-theme="dark"] .ui-widget-header .ui-state-focus {
+  border-color: var(--theme-text-field) !important;
+  background: var(--theme-surface-raised) !important;
+  color: var(--theme-text-field) !important;
+}
