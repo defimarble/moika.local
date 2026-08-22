@@ -89,6 +89,10 @@ $localBusinessSchema = [
     <script type="application/ld+json"><?php echo json_encode($localBusinessSchema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?></script>
 </head>
 <body>
+<button class="theme-toggle" type="button" aria-label="Switch color theme" title="Switch color theme">
+    <span class="theme-toggle__sun" aria-hidden="true">&#9728;</span>
+    <span class="theme-toggle__moon" aria-hidden="true">&#9790;</span>
+</button>
 <div class="line" id="main"></div>
 <div id="top-line">
     <div id="main-header">

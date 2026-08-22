@@ -1,0 +1,79 @@
+html[data-theme="light"] {
+  color-scheme: light;
+  background-color: #fff;
+}
+html[data-theme="light"] body {
+  background-color: #fff;
+  color: #3d3d3d;
+}
+html[data-theme="dark"] { color-scheme: dark; }
+
+.theme-toggle {
+  position: fixed;
+  z-index: 1200;
+  top: 134px;
+  right: 14px;
+  display: grid;
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  place-items: center;
+  border: 2px solid #fdb714;
+  border-radius: 50%;
+  background: #fff;
+  color: #26364d;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, .22);
+  cursor: pointer;
+  transition: background-color .2s ease, color .2s ease, transform .2s ease;
+}
+.theme-toggle:hover { transform: translateY(-2px); }
+.theme-toggle:focus-visible { outline: 3px solid #4e79b6; outline-offset: 3px; }
+.theme-toggle span { grid-area: 1 / 1; color: inherit; font-size: 25px; line-height: 1; }
+.theme-toggle__sun { display: none; }
+html[data-theme="dark"] .theme-toggle__sun { display: block; }
+html[data-theme="dark"] .theme-toggle__moon { display: none; }
+
+html[data-theme="dark"],
+html[data-theme="dark"] body { background-color: #10151d; color: #e7edf5; }
+html[data-theme="dark"] * { border-color: #394554; }
+html[data-theme="dark"] body,
+html[data-theme="dark"] p,
+html[data-theme="dark"] li,
+html[data-theme="dark"] label,
+html[data-theme="dark"] span,
+html[data-theme="dark"] strong,
+html[data-theme="dark"] em,
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3,
+html[data-theme="dark"] h4 { color: #e7edf5; }
+html[data-theme="dark"] a { color: #a9c9f5; }
+html[data-theme="dark"] #top-line,
+html[data-theme="dark"] #top-line #main-header,
+html[data-theme="dark"] #main-content,
+html[data-theme="dark"] #main-content #content,
+html[data-theme="dark"] .ui-dialog,
+html[data-theme="dark"] .ui-widget-content { background-color: #151c26; color: #e7edf5; }
+html[data-theme="dark"] #top-line #main-menu { background-color: #263f68; }
+html[data-theme="dark"] #top-line #main-menu #menu .menu li .sub-menu,
+html[data-theme="dark"] .related-services__card { background-color: #1d2633; box-shadow: 0 8px 22px rgba(0, 0, 0, .28); }
+html[data-theme="dark"] #top-line #main-menu #menu .menu li .sub-menu a,
+html[data-theme="dark"] #main-content #content .usl-list .right p { color: #d8e0ea; }
+html[data-theme="dark"] #main-content #content .page-title span { background-color: #151c26; }
+html[data-theme="dark"] #main-content #content .price-block ul.price li { background-color: #25303e; color: #e7edf5; }
+html[data-theme="dark"] .related-services { background-color: #111821; }
+html[data-theme="dark"] input,
+html[data-theme="dark"] textarea,
+html[data-theme="dark"] select,
+html[data-theme="dark"] .jq-selectbox__select,
+html[data-theme="dark"] .jq-selectbox__dropdown { background-color: #202a37; color: #f1f5fa; border-color: #4b596b; }
+html[data-theme="dark"] .theme-toggle { background-color: #202a37; color: #ffd36b; }
+html[data-theme="dark"] img { opacity: .93; }
+
+@media screen and (max-width: 999px) {
+  .theme-toggle { top: 62px; right: 10px; width: 42px; height: 42px; }
+  .theme-toggle span { font-size: 23px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .theme-toggle { transition: none; }
+}
