@@ -375,10 +375,100 @@ html[data-theme="dark"] #pop-up form .booking-note {
   .theme-toggle span {
     font-size: 23px;
   }
+
+  html[data-theme="dark"] #top-line #main-header #header .right-block .lang a {
+    background-color: transparent !important;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    user-select: none;
+  }
+
+  html[data-theme="dark"] #top-line #main-header #header .right-block .lang a:focus,
+  html[data-theme="dark"] #top-line #main-header #header .right-block .lang a:active {
+    background-color: transparent !important;
+    box-shadow: none;
+  }
+
+  html[data-theme="dark"] #top-line #main-header #header .right-block .lang a:focus-visible {
+    outline: 1px solid var(--theme-text-field);
+    outline-offset: 2px;
+  }
+
+  html[data-theme="dark"] #top-line #main-header #header .logo {
+    background-color: transparent !important;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    user-select: none;
+  }
+
+  html[data-theme="dark"] #top-line #main-header #header .logo:focus,
+  html[data-theme="dark"] #top-line #main-header #header .logo:active {
+    background-color: transparent !important;
+    outline: none;
+    box-shadow: none;
+  }
+
+  html[data-theme="dark"] #top-line #main-header #header .logo img {
+    -webkit-user-drag: none;
+    user-select: none;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .theme-toggle {
     transition: none;
   }
+}
+
+#main-advantages #advantages .advantages-list li:nth-child(5) {
+  background-image: url("../image/preim-five.png?v=3");
+}
+
+html[data-theme="dark"] #main-advantages #advantages .advantages-list li {
+  position: relative;
+  background-image: none !important;
+}
+
+html[data-theme="dark"] #main-advantages #advantages .advantages-list li::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 80px;
+  height: 80px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 80px 80px;
+  filter: invert(1) hue-rotate(180deg);
+  transform: translateY(-50%);
+}
+
+html[data-theme="dark"] #main-advantages #advantages .advantages-list li:first-child::before {
+  background-image: url("../image/preim-one.png");
+}
+
+html[data-theme="dark"] #main-advantages #advantages .advantages-list li:nth-child(2)::before {
+  background-image: url("../image/preim-two.png");
+}
+
+html[data-theme="dark"] #main-advantages #advantages .advantages-list li:nth-child(3)::before {
+  background-image: url("../image/preim-three.png");
+}
+
+html[data-theme="dark"] #main-advantages #advantages .advantages-list li:nth-child(4)::before {
+  background-image: url("../image/preim-four.png");
+}
+
+html[data-theme="dark"] #main-advantages #advantages .advantages-list li:nth-child(5)::before {
+  background-image: url("../image/preim-five.png?v=3");
+}
+
+html[data-theme="dark"] #main-advantages #advantages .advantages-list li:last-child::before {
+  background-image: url("../image/preim-six.png");
+}
+
+html[data-theme="dark"] #main-service #service .full-price span::after {
+  filter: invert(1) hue-rotate(180deg);
 }
