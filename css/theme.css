@@ -1,4 +1,23 @@
 /* Theme tokens */
+html.language-position-restoring body {
+  opacity: 0;
+  animation: language-position-fallback .01s 1.2s forwards;
+}
+
+html.language-transition-ready body {
+  transition: opacity .16s ease;
+}
+
+html.language-switch-leaving body {
+  opacity: 0;
+}
+
+@keyframes language-position-fallback {
+  to {
+    opacity: 1;
+  }
+}
+
 :root {
   --theme-accent: #fdb714;
   --theme-focus: #4e79b6;

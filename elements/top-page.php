@@ -20,6 +20,25 @@ site_apply_device_language();
             document.documentElement.setAttribute('data-theme', theme);
         }());
     </script>
+    <style>
+        html { background-color: #fff; }
+        html[data-theme="dark"] { background-color: #10151d; }
+    </style>
+    <script>
+        (function () {
+            var saved;
+
+            try {
+                saved = JSON.parse(sessionStorage.getItem('pirita-language-position') || 'null');
+            } catch (error) {
+                return;
+            }
+
+            if (saved && Date.now() - saved.savedAt < 15000) {
+                document.documentElement.classList.add('language-transition-ready', 'language-position-restoring');
+            }
+        }());
+    </script>
     <link rel="icon" type="image/x-icon" href="image/favicon.ico"/>
     <link rel="preload" href="fonts/open_sans_regular.woff2" as="font" type="font/woff2" crossorigin>
     <link href="css/main.css?v=<?php echo (int) @filemtime(__DIR__ . '/../css/main.css'); ?>" type="text/css" rel="stylesheet">
@@ -33,3 +52,4 @@ site_apply_device_language();
     <script>window.siteLanguage = <?php echo json_encode(site_language()); ?>;</script>
     <script type='text/javascript' src='js/script.js'></script>
     <script type='text/javascript' src='js/theme.js' defer></script>
+    <script type='text/javascript' src='js/language-position.js?v=<?php echo (int) @filemtime(__DIR__ . '/../js/language-position.js'); ?>' defer></script>
