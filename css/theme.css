@@ -33,6 +33,47 @@ html.language-transition-cover.language-transition-reveal::before {
   --theme-toggle-shadow: 0 5px 18px rgba(0, 0, 0, .22);
 }
 
+/* Remove the browser's blue touch flash without hiding keyboard focus. */
+a,
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+select,
+[role="button"],
+[onclick],
+.jq-selectbox,
+.fancybox,
+.theme-toggle {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+[role="button"],
+[onclick],
+.jq-selectbox,
+.theme-toggle {
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible),
+input[type="button"]:focus:not(:focus-visible),
+input[type="submit"]:focus:not(:focus-visible),
+input[type="reset"]:focus:not(:focus-visible),
+select:focus:not(:focus-visible),
+[role="button"]:focus:not(:focus-visible),
+[onclick]:focus:not(:focus-visible),
+.jq-selectbox.focused:not(:focus-visible),
+.fancybox:focus:not(:focus-visible),
+.theme-toggle:focus:not(:focus-visible) {
+  outline: none;
+}
+
 html[data-theme="light"] {
   color-scheme: light;
   background-color: #fff;
@@ -272,6 +313,13 @@ html[data-theme="dark"] #main-service #service,
 html[data-theme="dark"] #main-service #service * {
   color: var(--theme-service-text) !important;
   -webkit-text-fill-color: var(--theme-service-text) !important;
+}
+
+html[data-theme="dark"] #main-service #service .block-title,
+html[data-theme="dark"] #main-service #service .full-price,
+html[data-theme="dark"] #main-service #service .full-price span {
+  color: var(--theme-text-field) !important;
+  -webkit-text-fill-color: var(--theme-text-field) !important;
 }
 
 /* Dark theme: embedded Google map. */
