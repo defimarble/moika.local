@@ -59,6 +59,7 @@ html[data-theme="dark"] {
   --theme-service-title-bg: #203449;
   --theme-service-title-bg-alt: #263d54;
   --theme-service-text: #d6d8dc;
+  --theme-action-text: #d6d8dc;
   --theme-border: #394554;
   --theme-field-border: #b8c0c9;
   --theme-field-focus: #587b99;
@@ -140,6 +141,58 @@ html[data-theme="dark"] body * {
 
 html[data-theme="dark"] a {
   color: var(--theme-link) !important;
+}
+
+html[data-theme="dark"] button,
+html[data-theme="dark"] input[type="button"],
+html[data-theme="dark"] input[type="submit"],
+html[data-theme="dark"] #top-line #main-header #header .right-block .bron-bt,
+html[data-theme="dark"] #main-service #service .service-list > li .bt-bron,
+html[data-theme="dark"] #main-content #content .usl-list .bron-bt,
+html[data-theme="dark"] .bron-dialog .bron-bt,
+html[data-theme="dark"] #main-service #service .full-price,
+html[data-theme="dark"] #main-service #service .full-price span,
+html[data-theme="dark"] #main-booking #booking .right .title,
+html[data-theme="dark"] #main-booking #booking .right .number,
+html[data-theme="dark"] a[href^="tel:"] {
+  color: var(--theme-action-text) !important;
+  -webkit-text-fill-color: var(--theme-action-text) !important;
+}
+
+html[data-theme="dark"] #main-booking #booking .right .number {
+  transition: color .25s ease;
+}
+
+html[data-theme="dark"] #main-booking #booking .right .number:hover,
+html[data-theme="dark"] #main-booking #booking .right .number:focus-visible {
+  color: var(--theme-page-bg) !important;
+  -webkit-text-fill-color: var(--theme-page-bg) !important;
+}
+
+html[data-theme="dark"] .bron-bt,
+html[data-theme="dark"] .bt-bron,
+html[data-theme="dark"] form button[type="submit"],
+html[data-theme="dark"] form input[type="submit"] {
+  border-color: var(--theme-accent) !important;
+  background-color: var(--theme-accent) !important;
+  color: var(--theme-action-text) !important;
+  -webkit-text-fill-color: var(--theme-action-text) !important;
+  transition: background-color .25s ease, border-color .25s ease, color .25s ease, box-shadow .25s ease;
+}
+
+html[data-theme="dark"] .bron-bt:hover,
+html[data-theme="dark"] .bron-bt:focus-visible,
+html[data-theme="dark"] .bt-bron:hover,
+html[data-theme="dark"] .bt-bron:focus-visible,
+html[data-theme="dark"] form button[type="submit"]:hover,
+html[data-theme="dark"] form button[type="submit"]:focus-visible,
+html[data-theme="dark"] form input[type="submit"]:hover,
+html[data-theme="dark"] form input[type="submit"]:focus-visible {
+  border-color: var(--theme-accent) !important;
+  background-color: transparent !important;
+  color: var(--theme-action-text) !important;
+  -webkit-text-fill-color: var(--theme-action-text) !important;
+  box-shadow: none !important;
 }
 
 /* Dark theme: layout surfaces */
