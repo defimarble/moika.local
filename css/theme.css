@@ -364,6 +364,16 @@ html[data-theme="dark"] #pop-up form .booking-note {
 }
 
 /* Responsive placement */
+html[data-theme="light"] #main-booking #booking .right {
+  background-image: url("../image/booking-right-bg-light.png");
+  background-size: 100% auto;
+}
+
+html[data-theme="dark"] #main-booking #booking .right {
+  background-image: url("../image/booking-right-bg-new.png");
+  background-size: 100% auto;
+}
+
 @media screen and (max-width: 999px) {
   .theme-toggle {
     top: 62px;
