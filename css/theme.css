@@ -1,20 +1,27 @@
 /* Theme tokens */
-html.language-position-restoring body {
+html.language-transition-cover::before {
+  content: "";
+  position: fixed;
+  z-index: 2147483647;
+  inset: 0;
+  background-color: #fff;
+  opacity: 1;
+  pointer-events: none;
+  transition: opacity .12s ease;
+  animation: language-cover-fallback .12s 1s forwards;
+}
+
+html[data-theme="dark"].language-transition-cover::before {
+  background-color: #10151d;
+}
+
+html.language-transition-cover.language-transition-reveal::before {
   opacity: 0;
-  animation: language-position-fallback .01s 1.2s forwards;
 }
 
-html.language-transition-ready body {
-  transition: opacity .16s ease;
-}
-
-html.language-switch-leaving body {
-  opacity: 0;
-}
-
-@keyframes language-position-fallback {
+@keyframes language-cover-fallback {
   to {
-    opacity: 1;
+    opacity: 0;
   }
 }
 

@@ -3,11 +3,35 @@
 
     var storageKey = 'pirita-language-position';
 
+    function currentSection(y) {
+        var elements = document.querySelectorAll('[id]');
+        var selected = null;
+
+        for (var index = 0; index < elements.length; index += 1) {
+            var element = elements[index];
+            var top = element.getBoundingClientRect().top + y;
+
+            if (top <= y + 1 && (!selected || top > selected.top)) {
+                selected = {
+                    id: element.id,
+                    top: top
+                };
+            }
+        }
+
+        return selected;
+    }
+
     function savePosition(link) {
+        var y = window.pageYOffset || 0;
+        var section = currentSection(y);
+
         try {
             window.sessionStorage.setItem(storageKey, JSON.stringify({
                 x: window.pageXOffset || 0,
-                y: window.pageYOffset || 0,
+                y: y,
+                sectionId: section ? section.id : '',
+                sectionOffset: section ? y - section.top : 0,
                 savedAt: Date.now()
             }));
         } catch (error) {
@@ -37,21 +61,30 @@
 
     function restorePosition() {
         var saved = readPosition();
+        var targetY;
+        var section;
 
         if (!saved) {
-            document.documentElement.classList.remove('language-position-restoring');
+            document.documentElement.classList.remove('language-transition-cover');
             return;
         }
 
-        window.scrollTo(saved.x || 0, saved.y || 0);
+        targetY = saved.y || 0;
+        section = saved.sectionId ? document.getElementById(saved.sectionId) : null;
+
+        if (section) {
+            targetY = section.getBoundingClientRect().top + window.pageYOffset + (saved.sectionOffset || 0);
+        }
+
+        window.scrollTo(saved.x || 0, targetY);
         window.requestAnimationFrame(function () {
             window.requestAnimationFrame(function () {
-                window.scrollTo(saved.x || 0, saved.y || 0);
-                document.documentElement.classList.remove('language-position-restoring');
+                window.scrollTo(saved.x || 0, targetY);
                 window.sessionStorage.removeItem(storageKey);
+                document.documentElement.classList.add('language-transition-reveal');
                 window.setTimeout(function () {
-                    document.documentElement.classList.remove('language-transition-ready');
-                }, 200);
+                    document.documentElement.classList.remove('language-transition-cover', 'language-transition-reveal');
+                }, 140);
             });
         });
     }
@@ -70,11 +103,11 @@
         }
 
         savePosition(link);
-        document.documentElement.classList.add('language-transition-ready', 'language-switch-leaving');
+        document.documentElement.classList.add('language-transition-cover');
 
-        window.setTimeout(function () {
+        window.requestAnimationFrame(function () {
             window.location.href = link.href;
-        }, 160);
+        });
     });
 
     if (document.readyState === 'loading') {

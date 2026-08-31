@@ -35,7 +35,7 @@ site_apply_device_language();
             }
 
             if (saved && Date.now() - saved.savedAt < 15000) {
-                document.documentElement.classList.add('language-transition-ready', 'language-position-restoring');
+                document.documentElement.classList.add('language-transition-cover');
             }
         }());
     </script>
