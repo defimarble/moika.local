@@ -46,6 +46,7 @@ html[data-theme="light"] body {
 html[data-theme="dark"] {
   color-scheme: dark;
   --theme-accent: #c49a3a;
+  --theme-action-blue: #365580;
   --theme-focus: #58738d;
   --theme-page-bg: #10151d;
   --theme-surface: #151c26;
@@ -60,6 +61,7 @@ html[data-theme="dark"] {
   --theme-service-title-bg-alt: #263d54;
   --theme-service-text: #d6d8dc;
   --theme-action-text: #d6d8dc;
+  --theme-action-hover-text: #c8c4bd;
   --theme-border: #394554;
   --theme-field-border: #b8c0c9;
   --theme-field-focus: #587b99;
@@ -648,4 +650,39 @@ html[data-theme="dark"] .ui-widget-header .ui-state-focus {
   border-color: var(--theme-text-field) !important;
   background: var(--theme-surface-raised) !important;
   color: var(--theme-text-field) !important;
+}
+
+/* Dark theme: action labels match the blue lines of the advantage icons. */
+html[data-theme="dark"] #top-line #main-header #header .right-block .bron-bt,
+html[data-theme="dark"] #main-service #service .service-list > li .bt-bron,
+html[data-theme="dark"] #main-content #content .usl-list .bron-bt,
+html[data-theme="dark"] .bron-dialog .bron-bt,
+html[data-theme="dark"] #main-booking #booking .left .main-form form button[type="submit"],
+html[data-theme="dark"] #pop-up form input[type="submit"],
+html[data-theme="dark"] #main-booking #booking .right .title,
+html[data-theme="dark"] #main-booking #booking .right .number {
+  color: var(--theme-action-blue) !important;
+  -webkit-text-fill-color: var(--theme-action-blue) !important;
+}
+
+html[data-theme="dark"] #top-line #main-header #header .right-block .bron-bt:hover,
+html[data-theme="dark"] #top-line #main-header #header .right-block .bron-bt:focus-visible,
+html[data-theme="dark"] #main-service #service .service-list > li .bt-bron:hover,
+html[data-theme="dark"] #main-service #service .service-list > li .bt-bron:focus-visible,
+html[data-theme="dark"] #main-content #content .usl-list .bron-bt:hover,
+html[data-theme="dark"] #main-content #content .usl-list .bron-bt:focus-visible,
+html[data-theme="dark"] .bron-dialog .bron-bt:hover,
+html[data-theme="dark"] .bron-dialog .bron-bt:focus-visible,
+html[data-theme="dark"] #main-booking #booking .left .main-form form button[type="submit"]:hover,
+html[data-theme="dark"] #main-booking #booking .left .main-form form button[type="submit"]:focus-visible,
+html[data-theme="dark"] #pop-up form input[type="submit"]:hover,
+html[data-theme="dark"] #pop-up form input[type="submit"]:focus-visible {
+  color: var(--theme-action-hover-text) !important;
+  -webkit-text-fill-color: var(--theme-action-hover-text) !important;
+}
+
+html[data-theme="dark"] #main-booking #booking .right .number:hover,
+html[data-theme="dark"] #main-booking #booking .right .number:focus-visible {
+  color: var(--theme-page-bg) !important;
+  -webkit-text-fill-color: var(--theme-page-bg) !important;
 }
