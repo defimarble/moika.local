@@ -405,7 +405,7 @@ return array (
   'Удаление царапин и их маскировка:' => 'Kriimustuste eemaldamine ja katmine:',
   'Преимущества корпоративных услуг:' => 'Ettevõtete teenuste eelised:',
   'чистка и защитная обработки кожи' => 'naha puhastamine ja kaitsev töötlemine',
-  'Номер автомобиля (необязательно)' => 'Auto number (valikuline)',
+  'Номер автомобиля' => 'Auto number',
   'Услуги автомойки - Pirita Pesula' => 'Autopesula teenused - Pirita Pesula',
   'Дополнительные услуги полировки:' => 'Täiendavad poleerimisteenused:',
   'Влияние окружающей среды на фары' => 'Keskkonnamõju esituledele',

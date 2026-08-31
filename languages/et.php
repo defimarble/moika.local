@@ -54,7 +54,6 @@ return array(
     'Дата' => 'Kuupäev',
     'Время *' => 'Kellaaeg *',
     'Время' => 'Kellaaeg',
-    'Номер автомобиля (необязательно)' => 'Auto registreerimisnumber (valikuline)',
     'Номер автомобиля' => 'Auto registreerimisnumber',
     'Комментарий (необязательно)' => 'Kommentaar (valikuline)',
     'Комментарий' => 'Kommentaar',

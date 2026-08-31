@@ -405,7 +405,7 @@ return array (
   'Удаление царапин и их маскировка:' => 'Removing scratches and covering them up:',
   'Преимущества корпоративных услуг:' => 'Advantages of corporate services:',
   'чистка и защитная обработки кожи' => 'cleaning and protective treatment of leather',
-  'Номер автомобиля (необязательно)' => 'Car number (optional)',
+  'Номер автомобиля' => 'Car number',
   'Услуги автомойки - Pirita Pesula' => 'Car wash services - Pirita Pesula',
   'Дополнительные услуги полировки:' => 'Additional polishing services:',
   'Влияние окружающей среды на фары' => 'Environmental influence on headlights',

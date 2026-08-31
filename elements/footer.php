@@ -185,7 +185,7 @@
             </li>
             <li>
                 <label for="popup-car">Номер автомобиля</label>
-                <input type="text" placeholder="Номер автомобиля (необязательно)" name="auto_number" id="popup-car" autocomplete="off" maxlength="20">
+                <input type="text" placeholder="Номер автомобиля" name="auto_number" id="popup-car" autocomplete="off" maxlength="20">
             </li>
             <li>
                 <label for="popup-message">Комментарий</label>

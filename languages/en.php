@@ -54,7 +54,6 @@ return array(
     'Дата' => 'Date',
     'Время *' => 'Time *',
     'Время' => 'Time',
-    'Номер автомобиля (необязательно)' => 'Vehicle registration (optional)',
     'Номер автомобиля' => 'Vehicle registration',
     'Комментарий (необязательно)' => 'Comment (optional)',
     'Комментарий' => 'Comment',

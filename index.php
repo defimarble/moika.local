@@ -350,7 +350,7 @@
                             </li>
                             <li>
                                 <label for="booking-car">Номер автомобиля</label>
-                                <input type="text" placeholder="Номер автомобиля (необязательно)" name="auto_number" id="booking-car" autocomplete="off" maxlength="20">
+                                <input type="text" placeholder="Номер автомобиля" name="auto_number" id="booking-car" autocomplete="off" maxlength="20">
                             </li>
                             <li>
                                 <label for="booking-message">Комментарий</label>
