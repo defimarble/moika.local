@@ -1,3 +1,64 @@
+window.BookingDate = (function () {
+    var isMobile = /Android|iPad|iPhone|iPod/i.test(navigator.userAgent) ||
+        (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+
+    function localToday() {
+        var now = new Date();
+        var month = String(now.getMonth() + 1);
+        var day = String(now.getDate());
+        return now.getFullYear() + '-' + (month.length < 2 ? '0' + month : month) + '-' +
+            (day.length < 2 ? '0' + day : day);
+    }
+
+    function prepare(selector) {
+        var $input = $(selector);
+        if (!$input.length) return;
+
+        if (isMobile) {
+            $input.attr({ type: 'date', min: localToday() }).addClass('native-date-input');
+        } else {
+            $input.datepicker({ minDate: 0, dateFormat: 'dd.mm.yy' });
+        }
+    }
+
+    function formData(form) {
+        var data = new FormData(form);
+        var value = $(form).find('input[name="date"]').val();
+        var match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(value);
+
+        if (match) {
+            var serverDate = match[3] + '.' + match[2] + '.' + match[1];
+            if (typeof data.set === 'function') data.set('date', serverDate);
+            else {
+                data.delete('date');
+                data.append('date', serverDate);
+            }
+        }
+        return data;
+    }
+
+    function isValid(value) {
+        var match = /^(\d{2})\.(\d{2})\.(\d{4})$/.exec(value);
+        if (!match) {
+            var nativeMatch = /^(\d{4})-(\d{2})-(\d{2})$/.exec(value);
+            if (!nativeMatch) return false;
+            match = [nativeMatch[0], nativeMatch[3], nativeMatch[2], nativeMatch[1]];
+        }
+
+        var day = Number(match[1]);
+        var month = Number(match[2]);
+        var year = Number(match[3]);
+        var selected = new Date(year, month - 1, day);
+        var today = new Date();
+        today.setHours(0, 0, 0, 0);
+
+        return selected.getFullYear() === year && selected.getMonth() === month - 1 &&
+            selected.getDate() === day && selected >= today;
+    }
+
+    return { isMobile: isMobile, prepare: prepare, formData: formData, isValid: isValid };
+}());
+
 $(document).ready(function () {
     $('#slider ul').bxSlider({
         auto: true,
@@ -80,12 +141,15 @@ $(document).ready(function () {
 
         // return datepicker.regional.ru;
 
-        // Инициализация датапикеров
-        $("#datepicker").datepicker();
-        $("#datepicker2").datepicker();
+        BookingDate.prepare("#datepicker");
+        BookingDate.prepare("#datepicker2");
 
     } ) );
     $('select').styler();
+
+    $.validator.addMethod('bookingDate', function (value, element) {
+        return this.optional(element) || BookingDate.isValid(value);
+    });
 
     // Safari can ignore color-scheme for the native select popup on some iOS
     // versions. Use the already generated Form Styler list for booking fields
@@ -134,6 +198,21 @@ $(document).ready(function () {
             $box.addClass('opened focused ' + (openAbove ? 'dropup' : 'dropdown'));
         });
     }
+
+    $(document).on('click.bookingDate', '.booking-date-trigger', function () {
+        var input = document.getElementById($(this).attr('data-date-input'));
+        if (!input) return;
+
+        if (BookingDate.isMobile) {
+            if (typeof input.showPicker === 'function') input.showPicker();
+            else {
+                input.focus();
+                input.click();
+            }
+        } else {
+            $(input).datepicker('show');
+        }
+    });
 });
 var AlexApp = {
     pageService: function () {

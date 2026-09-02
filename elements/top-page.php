@@ -51,6 +51,6 @@ site_apply_device_language();
     <script type='text/javascript' src='js/jquery.scrollTo.js'></script>
     <script type='text/javascript' src='js/jquery.validate.min.js'></script>
     <script>window.siteLanguage = <?php echo json_encode(site_language()); ?>;</script>
-    <script type='text/javascript' src='js/script.js'></script>
+    <script type='text/javascript' src='js/script.js?v=<?php echo (int) @filemtime(__DIR__ . '/../js/script.js'); ?>'></script>
     <script type='text/javascript' src='js/theme.js' defer></script>
     <script type='text/javascript' src='js/language-position.js?v=<?php echo (int) @filemtime(__DIR__ . '/../js/language-position.js'); ?>' defer></script>

@@ -222,6 +222,7 @@
                                 'service' => site_translate('Выберите услугу'),
                                 'name' => site_translate('Введите имя'),
                                 'date' => site_translate('Введите дату'),
+                                'dateInvalid' => site_translate('Введите корректную дату'),
                                 'time' => site_translate('Введите время'),
                                 'phone' => site_translate('Введите телефон'),
                                 'phoneInvalid' => site_translate('Введите корректный телефон')
@@ -231,16 +232,14 @@
                                 return this.optional(element) || /^\+?[0-9\s()\-]{7,20}$/.test(value);
                             }, bookingValidationMessages.phoneInvalid);
 
-                            $("#datepicker").datepicker("option", {
-                                minDate: 0,
-                                dateFormat: "dd.mm.yy"
-                            });
-
                             $bookingForm.validate({
                                 rules: {
                                     usl: "required",
                                     name: "required",
-                                    date: "required",
+                                    date: {
+                                        required: true,
+                                        bookingDate: true
+                                    },
                                     time: "required",
                                     tel: {
                                         required: true,
@@ -250,7 +249,10 @@
                                 messages: {
                                     usl: bookingValidationMessages.service,
                                     name: bookingValidationMessages.name,
-                                    date: bookingValidationMessages.date,
+                                    date: {
+                                        required: bookingValidationMessages.date,
+                                        bookingDate: bookingValidationMessages.dateInvalid
+                                    },
                                     time: bookingValidationMessages.time,
                                     tel: {
                                         required: bookingValidationMessages.phone,
@@ -265,10 +267,14 @@
                                         error.insertAfter($styledSelect);
                                         return;
                                     }
+                                    if (element.attr("name") === "date") {
+                                        error.insertAfter(element.closest(".booking-date-control"));
+                                        return;
+                                    }
                                     error.insertAfter(element);
                                 },
                                 submitHandler : function(form){
-                                    var formData = new FormData(form);
+                                    var formData = BookingDate.formData(form);
                                     $bookingStatus.removeClass("ok error").text("");
                                     $submitButton.prop("disabled", true).text("Отправляем…");
                                     $.ajax({
@@ -329,7 +335,10 @@
                                 <ul class="sb">
                                     <li>
                                         <label for="datepicker">Дата</label>
-                                        <input type="text" name="date" id="datepicker" placeholder="Дата *" autocomplete="off" required>
+                                        <span class="booking-date-control">
+                                            <input type="text" name="date" id="datepicker" placeholder="Дата *" autocomplete="off" required>
+                                            <button type="button" class="booking-date-trigger" data-date-input="datepicker" aria-label="Выберите дату"></button>
+                                        </span>
                                     </li>
                                     <li>
                                         <label for="booking-time">Время</label>

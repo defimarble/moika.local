@@ -221,7 +221,7 @@ function site_localize_html($html)
             }
         }
 
-        foreach (array('placeholder', 'alt', 'title', 'content', 'data-title', 'data-copy') as $attribute) {
+        foreach (array('placeholder', 'alt', 'title', 'aria-label', 'content', 'data-title', 'data-copy') as $attribute) {
             foreach ($xpath->query('//*[@' . $attribute . ']') as $node) {
                 $source = site_normalize_translation_key($node->getAttribute($attribute));
                 if ($source !== '' && isset($translations[$source])) {

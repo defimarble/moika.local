@@ -446,6 +446,191 @@ html[data-theme="dark"] #pop-up #datepicker2 {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='27' height='27' viewBox='0 0 27 27'%3E%3Crect width='27' height='27' fill='%23c49a3a'/%3E%3Cpath d='m9.5 11.5 4 4 4-4' fill='none' stroke='%23202a37' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
 }
 
+/* Booking date: a real, separate picker button matching the select controls. */
+.booking-date-control {
+  display: flex;
+  width: 100%;
+  height: 39px;
+  border: 1px solid #c1c1c1;
+}
+
+#main-booking .booking-date-control #datepicker,
+#pop-up .booking-date-control #datepicker2 {
+  flex: 1 1 auto;
+  min-width: 0;
+  width: calc(100% - 34px) !important;
+  height: 37px;
+  padding: 5px 10px !important;
+  border: 0 !important;
+  outline: 0;
+  box-shadow: none !important;
+  background-image: none !important;
+  background-color: #fff;
+  color: #737373;
+  font-size: 18px;
+  font-weight: 400 !important;
+}
+
+html[data-theme="dark"] #main-booking .booking-date-control #datepicker,
+html[data-theme="dark"] #pop-up .booking-date-control #datepicker2 {
+  border: 0 !important;
+  background-color: var(--theme-surface-field) !important;
+  color: var(--theme-text-field) !important;
+  -webkit-text-fill-color: var(--theme-text-field) !important;
+}
+
+html[data-theme="dark"] .booking-date-control:focus-within #datepicker,
+html[data-theme="dark"] .booking-date-control:focus-within #datepicker2 {
+  border: 0 !important;
+  background-color: #293747 !important;
+  color: var(--theme-service-text) !important;
+  -webkit-text-fill-color: var(--theme-service-text) !important;
+}
+
+html[data-theme="dark"] .booking-date-control:focus-within .booking-date-trigger {
+  border: 0;
+}
+
+html[data-theme="dark"] .booking-date-control {
+  border-color: var(--theme-field-border);
+  background-color: var(--theme-surface-field);
+}
+
+html[data-theme="dark"] .booking-date-control:focus-within {
+  border-color: #d0d5db;
+  background-color: #293747;
+}
+
+.booking-date-trigger {
+  appearance: none;
+  -webkit-appearance: none;
+  flex: 0 0 34px;
+  width: 34px;
+  min-width: 34px;
+  height: 37px;
+  margin: 0;
+  padding: 0;
+  border: 0 !important;
+  outline: 0;
+  box-shadow: none !important;
+  border-radius: 0;
+  background-color: transparent;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='27' height='27' viewBox='0 0 27 27'%3E%3Crect width='27' height='27' fill='%23fdb714'/%3E%3Cpath d='m9.5 11.5 4 4 4-4' fill='none' stroke='%23202020' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-position: right 5px center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.booking-date-trigger:hover,
+.booking-date-trigger:active {
+  border: 0 !important;
+  background-color: transparent;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='27' height='27' viewBox='0 0 27 27'%3E%3Crect x='.5' y='.5' width='26' height='26' fill='%23fff' stroke='%23fdb714'/%3E%3Cpath d='m9.5 11.5 4 4 4-4' fill='none' stroke='%23202020' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+.booking-date-trigger:focus:not(:focus-visible) {
+  outline: 0;
+}
+
+.booking-date-trigger:focus-visible {
+  outline: 2px solid #4e79b6;
+  outline-offset: 2px;
+}
+
+html[data-theme="dark"] .booking-date-trigger {
+  border: 0 !important;
+  background-color: transparent;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='27' height='27' viewBox='0 0 27 27'%3E%3Crect width='27' height='27' fill='%23c49a3a'/%3E%3Cpath d='m9.5 11.5 4 4 4-4' fill='none' stroke='%23202a37' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+html[data-theme="dark"] .booking-date-trigger:hover,
+html[data-theme="dark"] .booking-date-trigger:active {
+  border: 0 !important;
+  background-color: transparent;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='27' height='27' viewBox='0 0 27 27'%3E%3Crect x='.5' y='.5' width='26' height='26' fill='%23202c3a' stroke='%23c9a13a'/%3E%3Cpath d='m9.5 11.5 4 4 4-4' fill='none' stroke='%23c9a13a' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+.native-date-input::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+
+/* Desktop calendar follows the selected site theme. */
+html[data-theme="light"] .ui-datepicker {
+  border-color: #c1c1c1;
+  background: #fff;
+  color: #3d3d3d;
+}
+
+html[data-theme="dark"] .ui-datepicker,
+html[data-theme="dark"] .ui-datepicker .ui-datepicker-header {
+  border-color: var(--theme-field-border);
+  background: var(--theme-surface-field);
+  color: var(--theme-text-field);
+}
+
+html[data-theme="dark"] .ui-datepicker .ui-datepicker-title,
+html[data-theme="dark"] .ui-datepicker th,
+html[data-theme="dark"] .ui-datepicker .ui-datepicker-prev,
+html[data-theme="dark"] .ui-datepicker .ui-datepicker-next {
+  color: var(--theme-text-field);
+}
+
+html[data-theme="dark"] .ui-datepicker td a,
+html[data-theme="dark"] .ui-datepicker td span {
+  border-color: var(--theme-field-border) !important;
+  background: var(--theme-surface-raised) !important;
+  color: var(--theme-text-field) !important;
+  -webkit-text-fill-color: var(--theme-text-field) !important;
+}
+
+html[data-theme="dark"] .ui-datepicker td a.ui-state-active {
+  border-color: var(--theme-accent) !important;
+  background: var(--theme-accent) !important;
+  color: var(--theme-page-bg) !important;
+  -webkit-text-fill-color: var(--theme-page-bg) !important;
+}
+
+html[data-theme="light"] .ui-datepicker td a.ui-state-highlight {
+  border-color: #e5a300 !important;
+  background: #ffe08a !important;
+  color: #202020 !important;
+  -webkit-text-fill-color: #202020 !important;
+  font-weight: 700;
+}
+
+html[data-theme="dark"] .ui-datepicker td a.ui-state-highlight {
+  border-color: #d6d8dc !important;
+  background: #3b4d62 !important;
+  color: #f0eee9 !important;
+  -webkit-text-fill-color: #f0eee9 !important;
+  font-weight: 700;
+}
+
+html[data-theme="light"] .ui-datepicker td a.ui-state-highlight.ui-state-active,
+html[data-theme="dark"] .ui-datepicker td a.ui-state-highlight.ui-state-active {
+  border-color: #f0eee9 !important;
+  background: var(--theme-accent) !important;
+  color: #202020 !important;
+  -webkit-text-fill-color: #202020 !important;
+  box-shadow: inset 0 0 0 1px #202020;
+}
+
+html[data-theme="light"] .ui-datepicker td a.ui-state-default:hover,
+html[data-theme="light"] .ui-datepicker td a.ui-state-default:focus-visible {
+  border-color: #d99a00 !important;
+  background: #ffd15c !important;
+  color: #202020 !important;
+  -webkit-text-fill-color: #202020 !important;
+}
+
+html[data-theme="dark"] .ui-datepicker td a.ui-state-default:hover,
+html[data-theme="dark"] .ui-datepicker td a.ui-state-default:focus-visible {
+  border-color: #f0eee9 !important;
+  background: #4b6078 !important;
+  color: #f0eee9 !important;
+  -webkit-text-fill-color: #f0eee9 !important;
+}
+
 /* Booking selects: invert only the yellow arrow button on interaction. */
 .jq-selectbox__trigger:hover .jq-selectbox__trigger-arrow,
 .jq-selectbox.focused .jq-selectbox__trigger-arrow,
