@@ -86,6 +86,54 @@ $(document).ready(function () {
 
     } ) );
     $('select').styler();
+
+    // Safari can ignore color-scheme for the native select popup on some iOS
+    // versions. Use the already generated Form Styler list for booking fields
+    // so its colours always follow the site theme.
+    var isIOS = /iPad|iPhone|iPod/i.test(navigator.userAgent) ||
+        (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+
+    if (isIOS) {
+        var bookingSelects = '#booking-service-styler, #booking-time-styler, #popup-service-styler, #popup-time-styler';
+        var bookingSelectTriggers = '#booking-service-styler > .jq-selectbox__select, ' +
+            '#booking-time-styler > .jq-selectbox__select, ' +
+            '#popup-service-styler > .jq-selectbox__select, ' +
+            '#popup-time-styler > .jq-selectbox__select';
+        document.documentElement.classList.add('ios-themed-booking-selects');
+
+        $(document).on('click.iosThemedBookingSelects', bookingSelectTriggers, function (event) {
+            event.preventDefault();
+
+            var $box = $(this).closest('.jq-selectbox');
+            var $dropdown = $box.children('.jq-selectbox__dropdown');
+            var $list = $dropdown.children('ul');
+            var isOpen = $box.hasClass('opened');
+
+            $(bookingSelects).not($box)
+                .removeClass('opened focused dropdown dropup')
+                .children('.jq-selectbox__dropdown').hide();
+
+            if (isOpen) {
+                $dropdown.hide();
+                $box.removeClass('opened focused dropdown dropup');
+                return;
+            }
+
+            var viewportHeight = $(window).height();
+            var fieldTop = $box.offset().top - $(window).scrollTop();
+            var fieldHeight = $box.outerHeight();
+            var roomBelow = viewportHeight - fieldTop - fieldHeight - 12;
+            var roomAbove = fieldTop - 12;
+            var openAbove = roomBelow < 180 && roomAbove > roomBelow;
+            var availableRoom = openAbove ? roomAbove : roomBelow;
+
+            $list.css('max-height', Math.max(140, Math.min(360, availableRoom)) + 'px');
+            $dropdown.css(openAbove
+                ? { display: 'block', top: 'auto', bottom: fieldHeight + 'px' }
+                : { display: 'block', top: fieldHeight + 'px', bottom: 'auto' });
+            $box.addClass('opened focused ' + (openAbove ? 'dropup' : 'dropdown'));
+        });
+    }
 });
 var AlexApp = {
     pageService: function () {

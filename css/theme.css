@@ -511,6 +511,21 @@ html[data-theme="dark"] #pop-up select optgroup {
   color: var(--theme-text-field) !important;
 }
 
+/* Keep booking menus theme-aware on iOS versions that force a light native popup. */
+html.ios-themed-booking-selects #booking-service,
+html.ios-themed-booking-selects #booking-time,
+html.ios-themed-booking-selects #popup-service,
+html.ios-themed-booking-selects #popup-time {
+  pointer-events: none;
+}
+
+html.ios-themed-booking-selects #booking-service-styler > .jq-selectbox__select,
+html.ios-themed-booking-selects #booking-time-styler > .jq-selectbox__select,
+html.ios-themed-booking-selects #popup-service-styler > .jq-selectbox__select,
+html.ios-themed-booking-selects #popup-time-styler > .jq-selectbox__select {
+  touch-action: manipulation;
+}
+
 html[data-theme="dark"] #main-booking #booking .left .title,
 html[data-theme="dark"] #main-booking #booking .left .main-form form label,
 html[data-theme="dark"] #pop-up form label {
