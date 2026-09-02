@@ -84,6 +84,30 @@ html[data-theme="light"] body {
   color: #3d3d3d;
 }
 
+/* Booking selects: theme-aware custom and native mobile pickers. */
+html[data-theme="light"] #main-booking select,
+html[data-theme="light"] #pop-up select {
+  color-scheme: light;
+}
+
+html[data-theme="light"] #main-booking .jq-selectbox__dropdown,
+html[data-theme="light"] #pop-up .jq-selectbox__dropdown,
+html[data-theme="light"] #main-booking .jq-selectbox__dropdown li,
+html[data-theme="light"] #pop-up .jq-selectbox__dropdown li,
+html[data-theme="light"] #main-booking select option,
+html[data-theme="light"] #pop-up select option {
+  background-color: #fff;
+  color: #3d3d3d;
+}
+
+html[data-theme="light"] #main-booking .jq-selectbox__dropdown li.selected,
+html[data-theme="light"] #main-booking .jq-selectbox__dropdown li:hover,
+html[data-theme="light"] #pop-up .jq-selectbox__dropdown li.selected,
+html[data-theme="light"] #pop-up .jq-selectbox__dropdown li:hover {
+  background-color: #f3f0ea;
+  color: #3d3d3d;
+}
+
 html[data-theme="dark"] {
   color-scheme: dark;
   --theme-accent: #c49a3a;
@@ -426,7 +450,7 @@ html[data-theme="dark"] #pop-up #datepicker2 {
 .jq-selectbox__trigger:hover .jq-selectbox__trigger-arrow,
 .jq-selectbox.focused .jq-selectbox__trigger-arrow,
 .jq-selectbox.opened .jq-selectbox__trigger-arrow {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='27' height='27' viewBox='0 0 27 27'%3E%3Crect x='.5' y='.5' width='26' height='26' fill='%23fff' stroke='%23fdb714'/%3E%3Cpath d='m9.5 11.5 4 4 4-4' fill='none' stroke='%23fdb714' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='27' height='27' viewBox='0 0 27 27'%3E%3Crect x='.5' y='.5' width='26' height='26' fill='%23fff' stroke='%23fdb714'/%3E%3Cpath d='m9.5 11.5 4 4 4-4' fill='none' stroke='%23202020' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   filter: none;
 }
 
@@ -434,7 +458,7 @@ html[data-theme="dark"] #pop-up #datepicker2 {
 #main-booking #datepicker:focus,
 #pop-up #datepicker2:hover,
 #pop-up #datepicker2:focus {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='27' height='27' viewBox='0 0 27 27'%3E%3Crect x='.5' y='.5' width='26' height='26' fill='%23fff' stroke='%23fdb714'/%3E%3Cpath d='m9.5 11.5 4 4 4-4' fill='none' stroke='%23fdb714' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='27' height='27' viewBox='0 0 27 27'%3E%3Crect x='.5' y='.5' width='26' height='26' fill='%23fff' stroke='%23fdb714'/%3E%3Cpath d='m9.5 11.5 4 4 4-4' fill='none' stroke='%23202020' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
 }
 
 html[data-theme="dark"] .jq-selectbox__trigger:hover .jq-selectbox__trigger-arrow,
@@ -461,6 +485,26 @@ html[data-theme="dark"] .jq-selectbox__dropdown {
   background-color: var(--theme-surface-field);
   color: var(--theme-text-field);
   border-color: var(--theme-field-border);
+}
+
+html[data-theme="dark"] #main-booking select,
+html[data-theme="dark"] #pop-up select {
+  color-scheme: dark;
+}
+
+html[data-theme="dark"] #main-booking .jq-selectbox__dropdown li.selected,
+html[data-theme="dark"] #main-booking .jq-selectbox__dropdown li:hover,
+html[data-theme="dark"] #pop-up .jq-selectbox__dropdown li.selected,
+html[data-theme="dark"] #pop-up .jq-selectbox__dropdown li:hover {
+  background-color: var(--theme-surface-raised);
+  color: var(--theme-service-text) !important;
+  -webkit-text-fill-color: var(--theme-service-text) !important;
+}
+
+html[data-theme="dark"] #main-booking select option,
+html[data-theme="dark"] #pop-up select option {
+  background-color: var(--theme-surface-field);
+  color: var(--theme-text-field);
 }
 
 html[data-theme="dark"] #main-booking #booking .left .title,
