@@ -59,7 +59,7 @@ $phone = booking_value('tel', 30);
 $date = booking_value('date', 10);
 $time = booking_value('time', 5);
 $carNumber = booking_value('auto_number', 20);
-$comment = booking_value('message', 1000);
+$comment = booking_sanitize_comment(booking_value('message', 1000));
 $website = booking_value('website', 200);
 
 if ($website !== '') {
@@ -109,6 +109,17 @@ if ($lastSentAt > 0 && time() - $lastSentAt < 30) {
         'Заявка уже отправлена. Подождите немного перед повторной отправкой.',
         'The request has already been sent. Please wait before sending another one.',
         'Taotlus on juba saadetud. Palun oodake enne uue taotluse saatmist.',
+        429
+    );
+}
+
+$retryAfter = booking_rate_limit(5, 600);
+if ($retryAfter > 0) {
+    header('Retry-After: ' . $retryAfter);
+    booking_response(
+        'Слишком много заявок. Попробуйте снова через несколько минут.',
+        'Too many requests. Please try again in a few minutes.',
+        'Liiga palju päringuid. Palun proovige mõne minuti pärast uuesti.',
         429
     );
 }
