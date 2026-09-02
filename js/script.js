@@ -1,6 +1,13 @@
 window.BookingDate = (function () {
-    var isMobile = /Android|iPad|iPhone|iPod/i.test(navigator.userAgent) ||
-        (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    var hasTouch = navigator.maxTouchPoints > 1 ||
+        (window.matchMedia && window.matchMedia('(pointer: coarse)').matches);
+    var isAndroid = /Android/i.test(navigator.userAgent);
+    var isIOS = /iPad|iPhone|iPod/i.test(navigator.userAgent) ||
+        (/Mac/i.test(navigator.platform) && hasTouch) ||
+        (/Apple/i.test(navigator.vendor || '') && hasTouch && window.screen.width <= 1366) ||
+        (!isAndroid && !/Windows/i.test(navigator.userAgent) && hasTouch &&
+            Math.min(window.screen.width, window.screen.height) <= 1024);
+    var usesNativePicker = isAndroid && hasTouch;
 
     function localToday() {
         var now = new Date();
@@ -14,10 +21,13 @@ window.BookingDate = (function () {
         var $input = $(selector);
         if (!$input.length) return;
 
-        if (isMobile) {
+        if (usesNativePicker) {
             $input.attr({ type: 'date', min: localToday() }).addClass('native-date-input');
         } else {
             $input.datepicker({ minDate: 0, dateFormat: 'dd.mm.yy' });
+            if (isIOS) {
+                $input.attr({ readonly: 'readonly', inputmode: 'none' }).addClass('ios-date-input');
+            }
         }
     }
 
@@ -56,7 +66,13 @@ window.BookingDate = (function () {
             selected.getDate() === day && selected >= today;
     }
 
-    return { isMobile: isMobile, prepare: prepare, formData: formData, isValid: isValid };
+    return {
+        isIOS: isIOS,
+        usesNativePicker: usesNativePicker,
+        prepare: prepare,
+        formData: formData,
+        isValid: isValid
+    };
 }());
 
 $(document).ready(function () {
@@ -154,8 +170,7 @@ $(document).ready(function () {
     // Safari can ignore color-scheme for the native select popup on some iOS
     // versions. Use the already generated Form Styler list for booking fields
     // so its colours always follow the site theme.
-    var isIOS = /iPad|iPhone|iPod/i.test(navigator.userAgent) ||
-        (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    var isIOS = BookingDate.isIOS;
 
     if (isIOS) {
         var bookingSelects = '#booking-service-styler, #booking-time-styler, #popup-service-styler, #popup-time-styler';
@@ -203,7 +218,7 @@ $(document).ready(function () {
         var input = document.getElementById($(this).attr('data-date-input'));
         if (!input) return;
 
-        if (BookingDate.isMobile) {
+        if (BookingDate.usesNativePicker) {
             if (typeof input.showPicker === 'function') input.showPicker();
             else {
                 input.focus();
