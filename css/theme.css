@@ -733,6 +733,30 @@ html.ios-themed-booking-selects #popup-time-styler > .jq-selectbox__select {
   touch-action: manipulation;
 }
 
+html.ios-themed-booking-selects #main-booking .jq-selectbox.opened,
+html.ios-themed-booking-selects #pop-up .jq-selectbox.opened {
+  z-index: 1100 !important;
+}
+
+html.ios-themed-booking-selects #main-booking .jq-selectbox__dropdown,
+html.ios-themed-booking-selects #pop-up .jq-selectbox__dropdown {
+  z-index: 1101 !important;
+  width: 100% !important;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+html.ios-themed-booking-selects #main-booking .jq-selectbox__dropdown ul,
+html.ios-themed-booking-selects #pop-up .jq-selectbox__dropdown ul {
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+#ui-datepicker-div.ui-datepicker {
+  z-index: 1150 !important;
+}
+
 html[data-theme="dark"] #main-booking #booking .left .title,
 html[data-theme="dark"] #main-booking #booking .left .main-form form label,
 html[data-theme="dark"] #pop-up form label {

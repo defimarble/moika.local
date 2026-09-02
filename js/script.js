@@ -7,7 +7,9 @@ window.BookingDate = (function () {
         (/Apple/i.test(navigator.vendor || '') && hasTouch && window.screen.width <= 1366) ||
         (!isAndroid && !/Windows/i.test(navigator.userAgent) && hasTouch &&
             Math.min(window.screen.width, window.screen.height) <= 1024);
-    var usesNativePicker = isAndroid && hasTouch;
+    // Keep one calendar implementation on every device. Native Android date
+    // inputs replace the placeholder and use a browser-specific dialog.
+    var usesNativePicker = false;
 
     function localToday() {
         var now = new Date();
@@ -25,8 +27,8 @@ window.BookingDate = (function () {
             $input.attr({ type: 'date', min: localToday() }).addClass('native-date-input');
         } else {
             $input.datepicker({ minDate: 0, dateFormat: 'dd.mm.yy' });
-            if (isIOS) {
-                $input.attr({ readonly: 'readonly', inputmode: 'none' }).addClass('ios-date-input');
+            if (hasTouch) {
+                $input.attr({ readonly: 'readonly', inputmode: 'none' }).addClass('touch-date-input');
             }
         }
     }
@@ -190,23 +192,32 @@ $(document).ready(function () {
 
             $(bookingSelects).not($box)
                 .removeClass('opened focused dropdown dropup')
+                .css('z-index', 100)
                 .children('.jq-selectbox__dropdown').hide();
 
             if (isOpen) {
                 $dropdown.hide();
-                $box.removeClass('opened focused dropdown dropup');
+                $box.removeClass('opened focused dropdown dropup').css('z-index', 100);
                 return;
             }
 
-            var viewportHeight = $(window).height();
-            var fieldTop = $box.offset().top - $(window).scrollTop();
+            var viewport = window.visualViewport;
+            var viewportHeight = viewport ? viewport.height : $(window).height();
+            var viewportTop = viewport ? viewport.offsetTop : 0;
+            var fieldTop = $box[0].getBoundingClientRect().top - viewportTop;
             var fieldHeight = $box.outerHeight();
             var roomBelow = viewportHeight - fieldTop - fieldHeight - 12;
             var roomAbove = fieldTop - 12;
             var openAbove = roomBelow < 180 && roomAbove > roomBelow;
             var availableRoom = openAbove ? roomAbove : roomBelow;
+            var listHeight = Math.max(96, Math.min(320, availableRoom - 8));
 
-            $list.css('max-height', Math.max(140, Math.min(360, availableRoom)) + 'px');
+            $(bookingSelects).css('z-index', 99);
+            $box.css('z-index', 1100);
+            $list.css({
+                'max-height': listHeight + 'px',
+                'overflow-y': 'auto'
+            });
             $dropdown.css(openAbove
                 ? { display: 'block', top: 'auto', bottom: fieldHeight + 'px' }
                 : { display: 'block', top: fieldHeight + 'px', bottom: 'auto' });
