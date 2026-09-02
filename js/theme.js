@@ -15,6 +15,11 @@
         return root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
     }
 
+    function updateColorScheme() {
+        var meta = document.querySelector('meta[name="color-scheme"]');
+        if (meta) meta.setAttribute('content', currentTheme());
+    }
+
     function updateButton() {
         var language = (root.getAttribute('lang') || 'en').toLowerCase();
         var copy = labels[language] || labels.en;
@@ -27,9 +32,11 @@
     button.addEventListener('click', function () {
         var theme = currentTheme() === 'dark' ? 'light' : 'dark';
         root.setAttribute('data-theme', theme);
+        updateColorScheme();
         try { localStorage.setItem('site-theme', theme); } catch (e) {}
         updateButton();
     });
 
+    updateColorScheme();
     updateButton();
 }());

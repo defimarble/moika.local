@@ -489,7 +489,9 @@ html[data-theme="dark"] .jq-selectbox__dropdown {
 
 html[data-theme="dark"] #main-booking select,
 html[data-theme="dark"] #pop-up select {
-  color-scheme: dark;
+  color-scheme: dark !important;
+  background-color: var(--theme-surface-field) !important;
+  color: var(--theme-text-field) !important;
 }
 
 html[data-theme="dark"] #main-booking .jq-selectbox__dropdown li.selected,
@@ -502,9 +504,11 @@ html[data-theme="dark"] #pop-up .jq-selectbox__dropdown li:hover {
 }
 
 html[data-theme="dark"] #main-booking select option,
-html[data-theme="dark"] #pop-up select option {
-  background-color: var(--theme-surface-field);
-  color: var(--theme-text-field);
+html[data-theme="dark"] #main-booking select optgroup,
+html[data-theme="dark"] #pop-up select option,
+html[data-theme="dark"] #pop-up select optgroup {
+  background-color: var(--theme-surface-field) !important;
+  color: var(--theme-text-field) !important;
 }
 
 html[data-theme="dark"] #main-booking #booking .left .title,

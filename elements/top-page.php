@@ -18,6 +18,7 @@ site_apply_device_language();
                 theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
             }
             document.documentElement.setAttribute('data-theme', theme);
+            document.querySelector('meta[name="color-scheme"]').setAttribute('content', theme);
         }());
     </script>
     <style>
