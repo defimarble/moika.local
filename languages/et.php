@@ -16,6 +16,7 @@ return array(
     'НАШИ ПРЕИМУЩЕСТВА' => 'MEIE EELISED',
     'ОСНОВНЫЕ УСЛУГИ' => 'PÕHITEENUSED',
     'Наружная мойка' => 'Välipesu',
+    'Наружная мойка и чистка салона' => 'Välipesu ja salongi puhastus',
     'Наружная мойка автомобиля' => 'Auto välipesu',
     'Безопасная ручная мойка и тщательная сушка кузова.' => 'Ohutu käsipesu ja auto kere põhjalik kuivatamine.',
     'Чистка салона' => 'Salongi puhastus',

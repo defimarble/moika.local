@@ -295,6 +295,7 @@ function site_localize_html($html)
 function site_booking_service_values()
 {
     return array(
+        'Наружная мойка и чистка салона',
         'Наружная мойка',
         'Чистка салона',
         'Полировка кузова',

@@ -302,6 +302,7 @@
                                 <label for="booking-service">Услуга</label>
                                 <select name="usl" id="booking-service" required>
                                     <option value="">Выберите услугу</option>
+                                    <option value="Наружная мойка и чистка салона">Наружная мойка и чистка салона</option>
                                     <option value="Наружная мойка">Наружная мойка</option>
                                     <option value="Чистка салона">Чистка салона</option>
                                     <option value="Полировка кузова">Полировка кузова</option>

@@ -16,6 +16,7 @@ return array(
     'НАШИ ПРЕИМУЩЕСТВА' => 'OUR BENEFITS',
     'ОСНОВНЫЕ УСЛУГИ' => 'MAIN SERVICES',
     'Наружная мойка' => 'Exterior car wash',
+    'Наружная мойка и чистка салона' => 'Exterior car wash and interior cleaning',
     'Наружная мойка автомобиля' => 'Exterior car wash',
     'Безопасная ручная мойка и тщательная сушка кузова.' => 'Safe hand washing and thorough body drying.',
     'Чистка салона' => 'Interior cleaning',
