@@ -83,6 +83,13 @@ html.language-transition-cover.language-transition-reveal::before {
   border: 0 !important;
   background: transparent !important;
   box-shadow: none !important;
+  transition: border-color .25s ease, background-color .25s ease;
+}
+
+html[data-theme="light"] .bron-dialog .ui-dialog-titlebar .ui-dialog-titlebar-close:hover,
+html[data-theme="light"] .bron-dialog .ui-dialog-titlebar .ui-dialog-titlebar-close:focus-visible {
+  border: 1px solid var(--theme-accent) !important;
+  background: #fff !important;
 }
 
 .bron-dialog .ui-dialog-titlebar .ui-dialog-titlebar-close .ui-icon {
