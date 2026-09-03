@@ -77,6 +77,30 @@ window.BookingDate = (function () {
     };
 }());
 
+window.BookingValidationUI = {
+    target: function (element) {
+        var $element = $(element);
+
+        if ($element.is('select')) {
+            var $styledSelect = $element.closest('.jq-selectbox');
+            return $styledSelect.length ? $styledSelect : $element;
+        }
+
+        if ($element.attr('name') === 'date') {
+            var $dateControl = $element.closest('.booking-date-control');
+            return $dateControl.length ? $dateControl : $element;
+        }
+
+        return $element;
+    },
+    highlight: function (element) {
+        BookingValidationUI.target(element).addClass('booking-field-invalid');
+    },
+    unhighlight: function (element) {
+        BookingValidationUI.target(element).removeClass('booking-field-invalid');
+    }
+};
+
 $(document).ready(function () {
     $('#slider ul').bxSlider({
         auto: true,

@@ -261,6 +261,8 @@
                                 },
                                 ignore: "div:hidden input, div:hidden select",
                                 errorElement: "span",
+                                highlight: BookingValidationUI.highlight,
+                                unhighlight: BookingValidationUI.unhighlight,
                                 errorPlacement: function(error, element) {
                                     var $styledSelect = element.closest(".jq-selectbox");
                                     if (element.is("select") && $styledSelect.length) {
