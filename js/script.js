@@ -82,7 +82,10 @@ window.BookingValidationUI = {
         var $element = $(element);
 
         if ($element.is('select')) {
-            var $styledSelect = $element.closest('.jq-selectbox');
+            var $styledSelect = $element.parent('.jq-selectbox');
+            if (!$styledSelect.length && $element.attr('id')) {
+                $styledSelect = $('#' + $element.attr('id') + '-styler');
+            }
             return $styledSelect.length ? $styledSelect : $element;
         }
 
@@ -94,10 +97,10 @@ window.BookingValidationUI = {
         return $element;
     },
     highlight: function (element) {
-        BookingValidationUI.target(element).addClass('booking-field-invalid');
+        $(element).add(BookingValidationUI.target(element)).addClass('booking-field-invalid');
     },
     unhighlight: function (element) {
-        BookingValidationUI.target(element).removeClass('booking-field-invalid');
+        $(element).add(BookingValidationUI.target(element)).removeClass('booking-field-invalid');
     }
 };
 
