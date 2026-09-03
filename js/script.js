@@ -310,6 +310,7 @@ var AlexApp = {
             {
                 width: Math.min(400, $(window).width() - 20),
                 modal: true,
+                resizable: false,
                 title: dialogTitles[window.siteLanguage] || dialogTitles.ru,
                 dialogClass: 'bron-dialog',
                 open: function() {

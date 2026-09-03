@@ -33,6 +33,100 @@ html.language-transition-cover.language-transition-reveal::before {
   --theme-toggle-shadow: 0 5px 18px rgba(0, 0, 0, .22);
 }
 
+/* Booking dialog header follows the booking action button. */
+.bron-dialog.ui-dialog {
+  overflow: hidden;
+  border: 1px solid #b9b9b9 !important;
+  background: #fff !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .28) !important;
+}
+
+.bron-dialog .ui-dialog-content {
+  border: 0 !important;
+}
+
+.bron-dialog .ui-resizable-handle {
+  display: none !important;
+}
+
+.bron-dialog .ui-dialog-titlebar {
+  display: flex;
+  min-height: 46px;
+  padding: 8px 44px;
+  align-items: center;
+  justify-content: center;
+  border-color: var(--theme-accent) !important;
+  background: var(--theme-accent) !important;
+}
+
+.bron-dialog .ui-dialog-titlebar .ui-dialog-title {
+  float: none;
+  width: 100%;
+  margin: 0;
+  color: #3d3d3d !important;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 28px;
+  text-align: center;
+  -webkit-text-fill-color: #3d3d3d !important;
+}
+
+.bron-dialog .ui-dialog-titlebar .ui-dialog-titlebar-close {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  width: 36px;
+  height: 36px;
+  margin: 0;
+  padding: 0;
+  transform: translateY(-50%);
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.bron-dialog .ui-dialog-titlebar .ui-dialog-titlebar-close .ui-icon {
+  position: absolute;
+  inset: 0;
+  width: 36px;
+  height: 36px;
+  margin: 0;
+  background: none !important;
+  text-indent: -9999px;
+}
+
+.bron-dialog .ui-dialog-titlebar .ui-dialog-titlebar-close .ui-icon::before,
+.bron-dialog .ui-dialog-titlebar .ui-dialog-titlebar-close .ui-icon::after {
+  content: "";
+  position: absolute;
+  top: 17px;
+  left: 9px;
+  width: 18px;
+  height: 2px;
+  border-radius: 1px;
+  background: #3d3d3d;
+  transform: rotate(45deg);
+}
+
+.bron-dialog .ui-dialog-titlebar .ui-dialog-titlebar-close .ui-icon::after {
+  transform: rotate(-45deg);
+}
+
+html[data-theme="dark"] .bron-dialog .ui-dialog-titlebar .ui-dialog-title {
+  color: var(--theme-action-blue) !important;
+  -webkit-text-fill-color: var(--theme-action-blue) !important;
+}
+
+html[data-theme="dark"] .bron-dialog.ui-dialog {
+  border-color: var(--theme-field-border) !important;
+  background: var(--theme-surface) !important;
+}
+
+html[data-theme="dark"] .bron-dialog .ui-dialog-titlebar .ui-dialog-titlebar-close .ui-icon::before,
+html[data-theme="dark"] .bron-dialog .ui-dialog-titlebar .ui-dialog-titlebar-close .ui-icon::after {
+  background: var(--theme-action-blue);
+}
+
 /* Remove the browser's blue touch flash without hiding keyboard focus. */
 a,
 button,
@@ -812,23 +906,34 @@ html[data-theme="dark"] #pop-up form .jq-selectbox__dropdown li {
 }
 
 html[data-theme="dark"] #booking-service-styler .jq-selectbox__select,
-html[data-theme="dark"] #booking-time-styler .jq-selectbox__select {
+html[data-theme="dark"] #booking-time-styler .jq-selectbox__select,
+html[data-theme="dark"] #popup-service-styler .jq-selectbox__select,
+html[data-theme="dark"] #popup-time-styler .jq-selectbox__select {
   border: 1px solid var(--theme-field-border);
   box-shadow: none;
 }
 
 html[data-theme="dark"] #booking-service-styler:hover .jq-selectbox__select,
 html[data-theme="dark"] #booking-time-styler:hover .jq-selectbox__select,
+html[data-theme="dark"] #popup-service-styler:hover .jq-selectbox__select,
+html[data-theme="dark"] #popup-time-styler:hover .jq-selectbox__select,
 html[data-theme="dark"] #booking-service-styler.focused .jq-selectbox__select,
 html[data-theme="dark"] #booking-time-styler.focused .jq-selectbox__select,
+html[data-theme="dark"] #popup-service-styler.focused .jq-selectbox__select,
+html[data-theme="dark"] #popup-time-styler.focused .jq-selectbox__select,
 html[data-theme="dark"] #booking-service-styler.opened .jq-selectbox__select,
-html[data-theme="dark"] #booking-time-styler.opened .jq-selectbox__select {
+html[data-theme="dark"] #booking-time-styler.opened .jq-selectbox__select,
+html[data-theme="dark"] #popup-service-styler.opened .jq-selectbox__select,
+html[data-theme="dark"] #popup-time-styler.opened .jq-selectbox__select {
   border-color: var(--theme-field-border);
+  outline: none;
   box-shadow: none;
 }
 
 html[data-theme="dark"] #booking-service-styler .jq-selectbox__select:active,
-html[data-theme="dark"] #booking-time-styler .jq-selectbox__select:active {
+html[data-theme="dark"] #booking-time-styler .jq-selectbox__select:active,
+html[data-theme="dark"] #popup-service-styler .jq-selectbox__select:active,
+html[data-theme="dark"] #popup-time-styler .jq-selectbox__select:active {
   border-color: var(--theme-field-border);
   background-color: var(--theme-surface-field);
   box-shadow: none;
