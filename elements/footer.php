@@ -164,7 +164,7 @@
             </li>
             <li>
                 <label for="popup-phone">Ваш телефон</label>
-                <input type="tel" name="tel" id="popup-phone" placeholder="Телефон, например +372 5555 5555 *" autocomplete="tel" inputmode="tel" maxlength="30" required>
+                <input type="tel" name="tel" id="popup-phone" placeholder="Телефон *" autocomplete="tel" inputmode="tel" maxlength="30" required>
             </li>
             <li>
                 <ul class="sb">

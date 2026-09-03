@@ -329,7 +329,7 @@
                             </li>
                             <li>
                                 <label for="booking-phone">Ваш телефон</label>
-                                <input type="tel" name="tel" id="booking-phone" placeholder="Телефон, например +372 5555 5555 *" autocomplete="tel" inputmode="tel" maxlength="30" required>
+                                <input type="tel" name="tel" id="booking-phone" placeholder="Телефон *" autocomplete="tel" inputmode="tel" maxlength="30" required>
                             </li>
                             <li>
                                 <ul class="sb">

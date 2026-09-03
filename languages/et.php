@@ -50,7 +50,7 @@ return array(
     'Ваше имя' => 'Teie nimi',
     'Ваше имя *' => 'Teie nimi *',
     'Ваш телефон' => 'Teie telefon',
-    'Телефон, например +372 5555 5555 *' => 'Telefon, nt +372 5555 5555 *',
+    'Телефон *' => 'Telefon *',
     'Дата *' => 'Kuupäev *',
     'Дата' => 'Kuupäev',
     'Выберите дату' => 'Valige kuupäev',

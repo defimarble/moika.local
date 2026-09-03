@@ -397,7 +397,7 @@ return array (
   'Процесс восстановления и защиты фар' => 'The process of restoring and protecting headlights',
   'Кожаные сиденья и текстильный салон' => 'Leather seats and textile interior',
   'Страница не найдена - Pirita Pesula' => 'Page not found - Pirita Pesula',
-  'Телефон, например +372 5555 5555 *' => 'Phone, for example +372 5555 5555 *',
+  'Телефон *' => 'Phone *',
   'Уход за кожаным салоном автомобиля' => 'Caring for leather car interior',
   'Уход за металлическими элементами:' => 'Caring for metal elements:',
   'очистка пылесосом ковриков и пола' => 'vacuuming rugs and floors',

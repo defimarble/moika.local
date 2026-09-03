@@ -133,6 +133,10 @@ $message .= 'Телефон: ' . booking_html($phone) . '<br>';
 $message .= 'Дата: ' . booking_html($date) . '<br>';
 $message .= 'Время: ' . booking_html($time) . '<br>';
 $message .= 'Номер машины: ' . booking_html($carNumber !== '' ? $carNumber : 'не указан') . '<br>';
+if ($carNumber !== '') {
+    $vehicleCheckUrl = 'https://eteenindus.mnt.ee/public/soidukTaustakontroll.jsf?lang=ru';
+    $message .= 'Проверить автомобиль: <a href="' . booking_html($vehicleCheckUrl) . '" target="_blank" rel="noopener noreferrer">Transpordiamet</a><br>';
+}
 if ($comment !== '') {
     $message .= 'Сообщение: ' . nl2br(booking_html($comment)) . '<br>';
 }

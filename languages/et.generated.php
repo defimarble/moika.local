@@ -397,7 +397,7 @@ return array (
   'Процесс восстановления и защиты фар' => 'Esitulede taastamise ja kaitsmise protsess',
   'Кожаные сиденья и текстильный салон' => 'Nahast istmed ja tekstiilist sisustus',
   'Страница не найдена - Pirita Pesula' => 'Lehekülge ei leitud - Pirita Pesula',
-  'Телефон, например +372 5555 5555 *' => 'Telefon, näiteks +372 5555 5555 *',
+  'Телефон *' => 'Telefon *',
   'Уход за кожаным салоном автомобиля' => 'Auto nahksisu hooldamine',
   'Уход за металлическими элементами:' => 'Metallelementide eest hoolitsemine:',
   'очистка пылесосом ковриков и пола' => 'vaipade ja põrandate tolmuimejaga',
