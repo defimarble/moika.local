@@ -127,6 +127,13 @@ html[data-theme="dark"] .bron-dialog .ui-dialog-titlebar .ui-dialog-titlebar-clo
   background: var(--theme-action-blue);
 }
 
+html[data-theme="dark"] .bron-dialog .ui-dialog-titlebar .ui-dialog-titlebar-close:hover .ui-icon::before,
+html[data-theme="dark"] .bron-dialog .ui-dialog-titlebar .ui-dialog-titlebar-close:hover .ui-icon::after,
+html[data-theme="dark"] .bron-dialog .ui-dialog-titlebar .ui-dialog-titlebar-close:focus-visible .ui-icon::before,
+html[data-theme="dark"] .bron-dialog .ui-dialog-titlebar .ui-dialog-titlebar-close:focus-visible .ui-icon::after {
+  background: var(--theme-action-hover-text);
+}
+
 /* Remove the browser's blue touch flash without hiding keyboard focus. */
 a,
 button,
