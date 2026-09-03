@@ -101,10 +101,34 @@ window.BookingValidationUI = {
     },
     unhighlight: function (element) {
         $(element).add(BookingValidationUI.target(element)).removeClass('booking-field-invalid');
+    },
+    markEmptyRequired: function (form) {
+        $(form).find('[required]').each(function () {
+            var value = $(this).val();
+            var isEmpty = value === null || $.trim(String(value)) === '';
+
+            if (isEmpty) {
+                BookingValidationUI.highlight(this);
+            }
+        });
     }
 };
 
 $(document).ready(function () {
+    $(document).on('click.bookingRequiredUI',
+        '#booking-form button[type="submit"], #booking-form input[type="submit"], ' +
+        '#popup-booking-form button[type="submit"], #popup-booking-form input[type="submit"]',
+        function () {
+            BookingValidationUI.markEmptyRequired(this.form || $(this).closest('form')[0]);
+        }
+    );
+
+    document.addEventListener('invalid', function (event) {
+        if ($(event.target).closest('#booking-form, #popup-booking-form').length) {
+            BookingValidationUI.highlight(event.target);
+        }
+    }, true);
+
     $('#slider ul').bxSlider({
         auto: true,
         pause:8000,

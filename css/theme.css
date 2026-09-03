@@ -357,16 +357,25 @@ html[data-theme="dark"] #main-booking #booking .right .number:focus-visible {
 #booking-service-styler.booking-field-invalid > .jq-selectbox__select,
 #popup-service-styler.booking-field-invalid > .jq-selectbox__select,
 #booking-service-styler:has(> select[aria-invalid="true"]) > .jq-selectbox__select,
-#popup-service-styler:has(> select[aria-invalid="true"]) > .jq-selectbox__select {
+#popup-service-styler:has(> select[aria-invalid="true"]) > .jq-selectbox__select,
+#booking-service.booking-field-invalid,
+#popup-service.booking-field-invalid,
+#booking-service[aria-invalid="true"],
+#popup-service[aria-invalid="true"] {
   border-color: #c93636 !important;
-  box-shadow: none !important;
+  box-shadow: inset 0 0 0 1px #c93636 !important;
 }
 
 html[data-theme="dark"] #booking-service-styler.booking-field-invalid > .jq-selectbox__select,
 html[data-theme="dark"] #popup-service-styler.booking-field-invalid > .jq-selectbox__select,
 html[data-theme="dark"] #booking-service-styler:has(> select[aria-invalid="true"]) > .jq-selectbox__select,
-html[data-theme="dark"] #popup-service-styler:has(> select[aria-invalid="true"]) > .jq-selectbox__select {
+html[data-theme="dark"] #popup-service-styler:has(> select[aria-invalid="true"]) > .jq-selectbox__select,
+html[data-theme="dark"] #booking-service.booking-field-invalid,
+html[data-theme="dark"] #popup-service.booking-field-invalid,
+html[data-theme="dark"] #booking-service[aria-invalid="true"],
+html[data-theme="dark"] #popup-service[aria-invalid="true"] {
   border-color: #e05a5a !important;
+  box-shadow: inset 0 0 0 1px #e05a5a !important;
 }
 
 html[data-theme="dark"] .bron-bt,
