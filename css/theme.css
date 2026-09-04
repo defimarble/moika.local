@@ -344,6 +344,33 @@ html[data-theme="dark"] #main-booking #booking .right .number:focus-visible {
   -webkit-text-fill-color: var(--theme-page-bg) !important;
 }
 
+/* Keep the mobile contact card inside its own box. The desktop artwork is
+   taller than the mobile container and otherwise spills over the map. */
+@media (max-width: 999px) {
+  #main-booking #booking .right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 0;
+    padding: 8px 10px 12px;
+    overflow: hidden;
+    isolation: isolate;
+    background: #fdb714 none;
+  }
+
+  #main-booking #booking .right::before {
+    display: none;
+  }
+
+  #main-booking #booking .right .title,
+  #main-booking #booking .right .number {
+    float: none;
+    width: 100%;
+    line-height: 1.3;
+  }
+}
+
 /* Booking fields use one border on iOS; Safari's focus ring must not stack. */
 #main-booking #booking .left .main-form form input:not([type="submit"]):focus,
 #main-booking #booking .left .main-form form textarea:focus,
