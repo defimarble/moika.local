@@ -134,7 +134,7 @@ $localBusinessSchema = [
                     </li>
                 </ul>
                 <ul class="mobile-menu">
-                    <li class="mobile-menu-bt" role="button" tabindex="0" aria-label="Открыть меню">
+                    <li class="mobile-menu-bt" role="button" tabindex="0" aria-label="Открыть меню" aria-controls="main-menu" aria-expanded="false">
                         &nbsp;
                     </li>
                     <li>
